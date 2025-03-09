@@ -1,0 +1,3227 @@
+[
+  {
+    "analytics_identifier": "OT1276",
+    "title": "Academy for Social Justice",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1369",
+    "title": "Accelerated Capability Environment",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA1350",
+    "title": "Active Travel England",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB523",
+    "title": "Administration of Radioactive Substances Advisory Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1188",
+    "title": "Administrative Court",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1147",
+    "title": "Admiralty Court",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1364",
+    "title": "Advanced Research and Invention Agency",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB573",
+    "title": "Advisory Committee on Animal Feedingstuffs",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB336",
+    "title": "Advisory Committee on Business Appointments",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1354",
+    "title": "Advisory Committee on Clinical Impact Awards",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB392",
+    "title": "Advisory Committee on Conscientious Objectors",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB574",
+    "title": "Advisory Committee on Novel Foods and Processes",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB209",
+    "title": "Advisory Committee on Releases to the Environment",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB575",
+    "title": "Advisory Committee on the Microbiological Safety of Food",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB437",
+    "title": "Advisory Committees on Justices of the Peace",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB271",
+    "title": "Advisory Council on the Misuse of Drugs",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB393",
+    "title": "Advisory Group on Military and Emergency Response Medicine",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB28",
+    "title": "Advisory, Conciliation and Arbitration Service",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1072",
+    "title": "Agri-Food and Biosciences Institute (Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT204",
+    "title": "Agriculture and Horticulture Development Board",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1439",
+    "title": "AI Security Institute",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT248",
+    "title": "Air Accidents Investigation Branch",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA1079",
+    "title": "Animal and Plant Health Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB534",
+    "title": "Animals in Science Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PC163",
+    "title": "Architects Registration Board",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1308",
+    "title": "Armed Forces Covenant Fund Trust",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB394",
+    "title": "Armed Forces' Pay Review Body",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB123",
+    "title": "Arts and Humanities Research Council",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB165",
+    "title": "Arts Council England",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA740",
+    "title": "Arts Council of Northern Ireland",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT731",
+    "title": "Arts Council of Wales",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1334",
+    "title": "Atomic Weapons Establishment",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D1",
+    "title": "Attorney General's Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1016",
+    "title": "Bank of England",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PC388",
+    "title": "BBC",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PC427",
+    "title": "BBC World Service",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1222",
+    "title": "Biometrics and Forensics Ethics Group",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "IM1345",
+    "title": "Biometrics and Surveillance Camera Commissioner",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB317",
+    "title": "Biotechnology and Biological Sciences Research Council",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB508",
+    "title": "Board of Trustees of the Royal Botanic Gardens Kew",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT564",
+    "title": "Bona Vacantia",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT535",
+    "title": "Border Force",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB337",
+    "title": "Boundary Commission for England",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT428",
+    "title": "Boundary Commission for Northern Ireland",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT431",
+    "title": "Boundary Commission for Scotland",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT432",
+    "title": "Boundary Commission for Wales",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1148",
+    "title": "British Business Bank",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1051",
+    "title": "British Cattle Movement Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT313",
+    "title": "British Council",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB189",
+    "title": "British Film Institute",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB124",
+    "title": "British Hallmarking Council",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB166",
+    "title": "British Library",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB167",
+    "title": "British Museum",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB524",
+    "title": "British Pharmacopoeia Commission",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1395",
+    "title": "British Technology Investments Ltd",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB461",
+    "title": "British Transport Police Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1374",
+    "title": "British Wool",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT216",
+    "title": "Broads Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA1352",
+    "title": "Building Digital UK",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D2",
+    "title": "Cabinet Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1201",
+    "title": "Cabinet Office Board",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB246",
+    "title": "Cafcass",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB251",
+    "title": "Care Quality Commission",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1102",
+    "title": "Careers Wales",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1194",
+    "title": "Central Advisory Committee on Compensation",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB148",
+    "title": "Central Arbitration Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1412",
+    "title": "Centre for Climate and Health Security",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1223",
+    "title": "Centre for Connected and Autonomous Vehicles ",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA53",
+    "title": "Centre for Environment, Fisheries and Aquaculture Science",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB139",
+    "title": "Certification Officer",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1205",
+    "title": "Chancery Division of the High Court",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PC386",
+    "title": "Channel 4",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT492",
+    "title": "Chevening Scholarship Programme ",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1277",
+    "title": "Child Safeguarding Practice Review Panel",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1290",
+    "title": "Churches Conservation Trust",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "CO1158",
+    "title": "Circuit Commercial Court",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PC469",
+    "title": "Civil Aviation Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB293",
+    "title": "Civil Justice Council",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1063",
+    "title": "Civil Nuclear Constabulary",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB194",
+    "title": "Civil Nuclear Police Authority",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB440",
+    "title": "Civil Procedure Rule Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CS1028",
+    "title": "Civil Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB366",
+    "title": "Civil Service Commission",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1121",
+    "title": "Civil Service Fast Stream",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1235",
+    "title": "College of Policing",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "CO1159",
+    "title": "Commercial Court",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1249",
+    "title": "Commission for Countering Extremism",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB525",
+    "title": "Commission on Human Medicines",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT517",
+    "title": "Commissioner for Public Appointments",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB196",
+    "title": "Committee on Climate Change",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1172",
+    "title": "Committee on Fuel Poverty",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB526",
+    "title": "Committee on Mutagenicity of Chemicals in Food, Consumer Products and the Environment",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB191",
+    "title": "Committee on Radioactive Waste Management",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB158",
+    "title": "Committee on Standards in Public Life",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB576",
+    "title": "Committee on Toxicity of Chemicals in Food, Consumer Products and the Environment",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB226",
+    "title": "Commonwealth Scholarship Commission in the UK",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA26",
+    "title": "Companies House",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1160",
+    "title": "Companies List",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1062",
+    "title": "Company Names Tribunal",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D550",
+    "title": "Competition and Markets Authority",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB140",
+    "title": "Competition Appeal Tribunal",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB318",
+    "title": "Competition Service",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB126",
+    "title": "Construction Industry Training Board",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB198",
+    "title": "Consumer Council for Water",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB355",
+    "title": "Copyright Tribunal",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EO1362",
+    "title": "Corporate Officers of the House of Commons",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EO1361",
+    "title": "Corporate Officers of the House of Lords",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB121",
+    "title": "Council for Science and Technology",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1163",
+    "title": "Court of Appeal Civil Division",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1181",
+    "title": "Court of Appeal Criminal Division",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1100",
+    "title": "Court of Protection",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT214",
+    "title": "Covent Garden Market Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "IM320",
+    "title": "Criminal Cases Review Commission",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB297",
+    "title": "Criminal Injuries Compensation Authority",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB516",
+    "title": "Criminal Procedure Rule Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PC1291",
+    "title": "Crossrail International",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA1015",
+    "title": "Crown Commercial Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D101",
+    "title": "Crown Prosecution Service",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT217",
+    "title": "Dartmoor National Park Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT405",
+    "title": "Defence Academy of the United Kingdom",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1206",
+    "title": "Defence and Security Accelerator",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1153",
+    "title": "Defence and Security Media Advisory Committee",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT495",
+    "title": "Defence Equipment and Support",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT496",
+    "title": "Defence Infrastructure Organisation",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1250",
+    "title": "Defence Nuclear Organisation",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB396",
+    "title": "Defence Nuclear Safety Expert Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1191",
+    "title": "Defence Safety Authority",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA42",
+    "title": "Defence Science and Technology Laboratory",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT411",
+    "title": "Defence Sixth Form College",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB211",
+    "title": "Defra's Science Advisory Council",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D1382",
+    "title": "Department for Business and Trade",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1173",
+    "title": "Department for Communities (Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D1383",
+    "title": "Department for Culture, Media and Sport",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D6",
+    "title": "Department for Education",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D1380",
+    "title": "Department for Energy Security and Net Zero",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D7",
+    "title": "Department for Environment, Food & Rural Affairs",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1176",
+    "title": "Department for Infrastructure (Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D1381",
+    "title": "Department for Science, Innovation and Technology",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1174",
+    "title": "Department for the Economy (Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D9",
+    "title": "Department for Transport",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D10",
+    "title": "Department for Work and Pensions",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1178",
+    "title": "Department of Agriculture, Environment and Rural Affairs (Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D585",
+    "title": "Department of Education (Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1177",
+    "title": "Department of Finance (Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1175",
+    "title": "Department of Health (Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D12",
+    "title": "Department of Health and Social Care",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D1073",
+    "title": "Department of Justice (Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PC1434",
+    "title": "DfT Operator Limited",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1309",
+    "title": "Disability Unit",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB247",
+    "title": "Disabled Persons Transport Advisory Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB509",
+    "title": "Disclosure and Barring Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1080",
+    "title": "District Valuer Services",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA74",
+    "title": "Driver and Vehicle Licensing Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA570",
+    "title": "Driver and Vehicle Standards Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1233",
+    "title": "East West Railway Company Limited",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1154",
+    "title": "Ebbsfleet Development Corporation",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB129",
+    "title": "Economic and Social Research Council",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EO1216",
+    "title": "Education and Skills Funding Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1390",
+    "title": "Electricity Settlements Company",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1267",
+    "title": "Employment Agency Standards Inspectorate",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1134",
+    "title": "Employment Appeal Tribunal",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1133",
+    "title": "Employment Tribunal",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB130",
+    "title": "Engineering and Physical Sciences Research Council",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB131",
+    "title": "Engineering Construction Industry Training Board",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT957",
+    "title": "English Institute of Sport",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA199",
+    "title": "Environment Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT269",
+    "title": "Equality and Human Rights Commission",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "DA1105",
+    "title": "Estyn",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1348",
+    "title": "Evaluation Task Force",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT219",
+    "title": "Exmoor National Park Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT557",
+    "title": "Export Control Joint Unit",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB357",
+    "title": "Export Guarantees Advisory Council",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1155",
+    "title": "Family Division of the High Court",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB441",
+    "title": "Family Justice Council",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB442",
+    "title": "Family Procedure Rule Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1085",
+    "title": "Financial Conduct Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1260",
+    "title": "Financial Reporting Council",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA37",
+    "title": "Fire Service College",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "CO1127",
+    "title": "First-tier Tribunal (Asylum Support)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1131",
+    "title": "First-tier Tribunal (Care Standards)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1130",
+    "title": "First-tier Tribunal (Criminal Injuries Compensation)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1125",
+    "title": "First-tier Tribunal (General Regulatory Chamber)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1143",
+    "title": "First-tier Tribunal (Immigration and Asylum)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1124",
+    "title": "First-tier Tribunal (Mental Health)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1139",
+    "title": "First-tier Tribunal (Property Chamber)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1136",
+    "title": "First-tier Tribunal (Social Security and Child Support)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1145",
+    "title": "First-tier Tribunal (Special Educational Needs and Disability)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1128",
+    "title": "First-tier Tribunal (Tax)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1126",
+    "title": "First-tier Tribunal (War Pensions and Armed Forces Compensation)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB311",
+    "title": "Fleet Air Arm Museum ",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1320",
+    "title": "Flood and Coastal Erosion Risk Management Research and Development Programme",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1335",
+    "title": "Flood Forecasting Centre",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1375",
+    "title": "Flood Re",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D102",
+    "title": "Food Standards Agency",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D1315",
+    "title": "Foreign, Commonwealth & Development Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT536",
+    "title": "Forensic Science Regulator",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA54",
+    "title": "Forest Research",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D85",
+    "title": "Forestry Commission",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA55",
+    "title": "Forestry England",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1273",
+    "title": "Further Education Commissioner",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB169",
+    "title": "Gambling Commission",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1234",
+    "title": "Gangmasters and Labour Abuse Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "CO1129",
+    "title": "Gangmasters Licensing Appeals",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1307",
+    "title": "Gov Facility Services Limited",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D103",
+    "title": "Government Actuary's Department",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1302",
+    "title": "Government Analysis Function",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1061",
+    "title": "Government Chemist",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1116",
+    "title": "Government Commercial Function",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1034",
+    "title": "Government Communication Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT306",
+    "title": "Government Communications Headquarters",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1050",
+    "title": "Government Corporate Finance Profession",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1317",
+    "title": "Government Data Quality Hub",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1413",
+    "title": "Government Debt Management Function",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1056",
+    "title": "Government Digital Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1037",
+    "title": "Government Economic Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT549",
+    "title": "Government Estates Management",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1297",
+    "title": "Government Finance Function",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1306",
+    "title": "Government Geography Profession",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA1084",
+    "title": "Government Internal Audit Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1048",
+    "title": "Government Knowledge & Information Management Profession",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D1108",
+    "title": "Government Legal Department",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1261",
+    "title": "Government Legal Profession",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1049",
+    "title": "Government Occupational Psychology Profession ",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT555",
+    "title": "Government Office for Science",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1372",
+    "title": "Government Office for Technology Transfer",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1042",
+    "title": "Government Operational Research Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D1397",
+    "title": "Government People Group",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1045",
+    "title": "Government Planning Inspectors",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1044",
+    "title": "Government Planning Profession",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA1255",
+    "title": "Government Property Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1310",
+    "title": "Government Property Function",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1305",
+    "title": "Government Recruitment Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1040",
+    "title": "Government Science & Engineering Profession",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1070",
+    "title": "Government Security Profession",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1416",
+    "title": "Government Skills",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1043",
+    "title": "Government Social Research Profession",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1041",
+    "title": "Government Statistical Service",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1046",
+    "title": "Government Tax Profession",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1047",
+    "title": "Government Veterinary Services ",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB426",
+    "title": "Great Britain-China Centre",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1421",
+    "title": "Great British Energy",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1373",
+    "title": "Great British Nuclear",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT551",
+    "title": "Groceries Code Adjudicator",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB207",
+    "title": "Health and Safety Executive",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT483",
+    "title": "Health Research Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1405",
+    "title": "Health Services Safety Investigations Body",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB460",
+    "title": "High Speed Two (HS2) Limited",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1088",
+    "title": "Higher Education Statistics Agency",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1164",
+    "title": "Historic England",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PC389",
+    "title": "Historic Royal Palaces",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA73",
+    "title": "HM Courts & Tribunals Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT347",
+    "title": "HM Crown Prosecution Service Inspectorate",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1209",
+    "title": "HM Government Communications Centre",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1241",
+    "title": "HM Inspectorate of Constabulary and Fire & Rescue Services",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "IM324",
+    "title": "HM Inspectorate of Prisons",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "IM325",
+    "title": "HM Inspectorate of Probation",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D69",
+    "title": "HM Land Registry",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1023",
+    "title": "HM Nautical Almanac Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA66",
+    "title": "HM Passport Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA1213",
+    "title": "HM Prison and Probation Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA321",
+    "title": "HM Prison Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D25",
+    "title": "HM Revenue & Customs",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D15",
+    "title": "HM Treasury",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D16",
+    "title": "Home Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1232",
+    "title": "Homes England",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB171",
+    "title": "Horniman Public Museum and Public Park Trust",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB118",
+    "title": "Horserace Betting Levy Board",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "IM341",
+    "title": "House of Lords Appointments Commission",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB372",
+    "title": "Housing Ombudsman",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1279",
+    "title": "HSC Business Services Organisation (Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB253",
+    "title": "Human Fertilisation and Embryology Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB254",
+    "title": "Human Tissue Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1420",
+    "title": "Immigration Advice Authority",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1069",
+    "title": "Immigration Enforcement",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB172",
+    "title": "Imperial War Museum",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1358",
+    "title": "Independent Adviser on Ministerial Standards",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB443",
+    "title": "Independent Advisory Panel on Deaths in Custody",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB210",
+    "title": "Independent Agricultural Appeals Panel",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "IM1123",
+    "title": "Independent Anti-slavery Commissioner",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT579",
+    "title": "Independent Case Examiner",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT284",
+    "title": "Independent Chief Inspector of Borders and Immigration ",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "IM335",
+    "title": "Independent Commission for Aid Impact",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1099",
+    "title": "Independent Complaints Reviewer",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1185",
+    "title": "Independent Dormant Assets Commission ",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1122",
+    "title": "Independent Family Returns Panel",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1017",
+    "title": "Independent Medical Expert Group",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1318",
+    "title": "Independent Monitoring Authority for the Citizensâ Rights Agreements",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT444",
+    "title": "Independent Monitoring Boards",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1248",
+    "title": "Independent Office for Police Conduct",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1219",
+    "title": "Independent Parliamentary Standards Authority ",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB527",
+    "title": "Independent Reconfiguration Panel",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1258",
+    "title": "Independent Review Mechanism",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT511",
+    "title": "Independent Reviewer of Terrorism Legislation",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1436",
+    "title": "Independent Water Commission",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT152",
+    "title": "Industrial Development Advisory Board",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB231",
+    "title": "Industrial Injuries Advisory Council",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1433",
+    "title": "Industrial Strategy Advisory Council",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1415",
+    "title": "Infected Blood Compensation Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB298",
+    "title": "Information Commissioner's Office",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1166",
+    "title": "Infrastructure and Projects Authority",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1078",
+    "title": "Innovate UK",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "CO1120",
+    "title": "Insolvency List",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB445",
+    "title": "Insolvency Rules Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1275",
+    "title": "Institute for Apprenticeships and Technical Education",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "CO1162",
+    "title": "Intellectual Property Enterprise Court",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA34",
+    "title": "Intellectual Property Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1052",
+    "title": "Intelligence Analysis ",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1038",
+    "title": "Internal Audit Profession",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1338",
+    "title": "Invest Northern Ireland",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1257",
+    "title": "Investigatory Powers Commissioner's Office",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB270",
+    "title": "Investigatory Powers Tribunal",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1195",
+    "title": "Iraq Inquiry",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1252",
+    "title": "jHub Defence Innovation",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB201",
+    "title": "Joint Nature Conservation Committee",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "IM333",
+    "title": "Judicial Appointments and Conduct Ombudsman",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB299",
+    "title": "Judicial Appointments Commission",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1215",
+    "title": "Judicial Office",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "CO1183",
+    "title": "King's Bench Division of the High Court",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT581",
+    "title": "King's Harbour Master",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA752",
+    "title": "Labour Relations Agency (Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT220",
+    "title": "Lake District National Park Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1190",
+    "title": "Lammy Review",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB358",
+    "title": "Land Registration Rule Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB294",
+    "title": "Law Commission",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1351",
+    "title": "Leadership College for Government",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB373",
+    "title": "Leasehold Advisory Service",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA556",
+    "title": "Legal Aid Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA1292",
+    "title": "Legal Services Agency (Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "IM332",
+    "title": "Legal Services Board",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1360",
+    "title": "LGBT Veterans Independent Review",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1263",
+    "title": "Life Sciences Organisation",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT849",
+    "title": "Livestock and Meat Commission for Northern Ireland",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB503",
+    "title": "Local Government and Social Care Ombudsman",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1245",
+    "title": "LocatED",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PC493",
+    "title": "London and Continental Railways Limited",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1389",
+    "title": "Low Carbon Contracts Company",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB122",
+    "title": "Low Pay Commission",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PC472",
+    "title": "Marine Accident Investigation Branch",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB57",
+    "title": "Marine Management Organisation",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA78",
+    "title": "Maritime and Coastguard Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT315",
+    "title": "Marshall Aid Commemoration Commission",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1054",
+    "title": "Medical Profession",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB132",
+    "title": "Medical Research Council",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA63",
+    "title": "Medicines and Healthcare products Regulatory Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA46",
+    "title": "Met Office",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB275",
+    "title": "Migration Advisory Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1071",
+    "title": "Military Aviation Authority",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1368",
+    "title": "Military Engineering Experimental Establishment",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1430",
+    "title": "Mining Remediation Authority",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D17",
+    "title": "Ministry of Defence",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D1419",
+    "title": "Ministry of Housing, Communities and Local Government",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D18",
+    "title": "Ministry of Justice",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1333",
+    "title": "Modernisation and Reform",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1266",
+    "title": "Money and Pensions Service",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB170",
+    "title": "Museum of the Home",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB307",
+    "title": "National Army Museum",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1270",
+    "title": "National Citizen Service",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1089",
+    "title": "National Counter Terrorism Security Office",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB558",
+    "title": "National Crime Agency",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB580",
+    "title": "National Crime Agency Remuneration Review Body ",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1349",
+    "title": "National Cyber Force",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1211",
+    "title": "National Cyber Security Centre",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1180",
+    "title": "National Data Guardian",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT237",
+    "title": "National Employment Savings Trust (NEST) Corporation",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PC1425",
+    "title": "National Energy System Operator",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB415",
+    "title": "National Forest Company",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB174",
+    "title": "National Gallery",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB175",
+    "title": "National Heritage Memorial Fund",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1346",
+    "title": "National Highways",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1161",
+    "title": "National Infrastructure Commission",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB474",
+    "title": "National Institute for Health and Care Excellence",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1284",
+    "title": "National Lottery Heritage Fund",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB290",
+    "title": "National Museum of the Royal Navy",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB178",
+    "title": "National Museums Liverpool",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PC1387",
+    "title": "National Physical Laboratory",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB179",
+    "title": "National Portrait Gallery",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1384",
+    "title": "National Protective Security Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT505",
+    "title": "National security and intelligence",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1409",
+    "title": "National Space Operations Centre",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB202",
+    "title": "Natural England",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB133",
+    "title": "Natural Environment Research Council",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB180",
+    "title": "Natural History Museum",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1103",
+    "title": "Natural Resources Wales",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1244",
+    "title": "Network Rail",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT222",
+    "title": "New Forest National Park Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT486",
+    "title": "NHS Blood and Transplant",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT529",
+    "title": "NHS Business Services Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1243",
+    "title": "NHS Counter Fraud Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB481",
+    "title": "NHS England",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB531",
+    "title": "NHS Pay Review Body",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1287",
+    "title": "NHS Resolution",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1104",
+    "title": "NHS Wales Informatics Service",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1353",
+    "title": "North Sea Transition Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT223",
+    "title": "North York Moors National Park Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1355",
+    "title": "Northern Ireland Cancer Registry",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT644",
+    "title": "Northern Ireland Council for the Curriculum, Examinations and Assessment",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA725",
+    "title": "Northern Ireland Courts and Tribunals Service",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "DA1021",
+    "title": "Northern Ireland Executive",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1212",
+    "title": "Northern Ireland Housing Executive",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT429",
+    "title": "Northern Ireland Human Rights Commission",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D19",
+    "title": "Northern Ireland Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT649",
+    "title": "Northern Ireland Policing Board",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA797",
+    "title": "Northern Ireland Prison Service",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA701",
+    "title": "Northern Ireland Statistics and Research Agency",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB463",
+    "title": "Northern Lighthouse Board",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT543",
+    "title": "Northumberland National Park Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA104",
+    "title": "NS&I",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB197",
+    "title": "Nuclear Decommissioning Authority",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB193",
+    "title": "Nuclear Liabilities Financing Assurance Board",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB400",
+    "title": "Nuclear Research Advisory Council",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1400",
+    "title": "Nuclear Restoration Services",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1347",
+    "title": "Nuclear Waste Services",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1370",
+    "title": "Oak National Academy",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT385",
+    "title": "Ofcom",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB260",
+    "title": "Office for Budget Responsibility",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1429",
+    "title": "Office for Digital Identities and Attributes",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1356",
+    "title": "Office for Environmental Protection",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1426",
+    "title": "Office for Equality and Opportunity",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1341",
+    "title": "Office for Health Improvement and Disparities",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1332",
+    "title": "Office for Investment",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT502",
+    "title": "Office for Life Sciences",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D303",
+    "title": "Office for National Statistics",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PC1059",
+    "title": "Office for Nuclear Regulation",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1246",
+    "title": "Office for Product Safety and Standards",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1253",
+    "title": "Office for Students",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1393",
+    "title": "Office for the Independent Examiner of Complaints",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1340",
+    "title": "Office for the Internal Market",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1424",
+    "title": "Office for the Pay Review Bodies",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1301",
+    "title": "Office for Veterans' Affairs",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1323",
+    "title": "Office for Zero Emission Vehicles",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1187",
+    "title": "Office of Financial Sanctions Implementation",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D1117",
+    "title": "Office of Rail and Road",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D20",
+    "title": "Office of the Advocate General for Scotland",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT744",
+    "title": "Office of the Chief Electoral Officer for Northern Ireland",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB413",
+    "title": "Office of the Children's Commissioner",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D21",
+    "title": "Office of the Leader of the House of Commons",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D22",
+    "title": "Office of the Leader of the House of Lords",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT515",
+    "title": "Office of the Parliamentary Counsel",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT636",
+    "title": "Office of the Police Ombudsman for Northern Ireland",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA72",
+    "title": "Office of the Public Guardian",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1091",
+    "title": "Office of the Registrar of Consultant Lobbyists",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT553",
+    "title": "Office of the Regulator of Community Interest Companies",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1027",
+    "title": "Office of the Schools Adjudicator",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1404",
+    "title": "Office of Trade Sanctions Implementation",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT328",
+    "title": "Official Solicitor and Public Trustee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1262",
+    "title": "Offshore Petroleum Regulator for Environment and Decommissioning",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D108",
+    "title": "Ofgem",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D109",
+    "title": "Ofqual",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D106",
+    "title": "Ofsted",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1403",
+    "title": "Online Procedure Rule Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CS1337",
+    "title": "Open Innovation Team",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT566",
+    "title": "Open Public Services",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1029",
+    "title": "Operational Delivery Profession",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D38",
+    "title": "Ordnance Survey",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1432",
+    "title": "PackUK",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT430",
+    "title": "Parades Commission for Northern Ireland",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT661",
+    "title": "Parliamentary Contributory Pension Fund",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB301",
+    "title": "Parole Board",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1170",
+    "title": "Patents Court",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1151",
+    "title": "Payment Systems Regulator",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT545",
+    "title": "Peak District National Park Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB348",
+    "title": "Pension Protection Fund",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1289",
+    "title": "Phone-paid Services Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "CO1156",
+    "title": "Planning Court",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA39",
+    "title": "Planning Inspectorate",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB423",
+    "title": "Plant Varieties and Seeds Tribunal",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB273",
+    "title": "Police Advisory Board for England and Wales",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB278",
+    "title": "Police Discipline Appeals Tribunal",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1083",
+    "title": "Police Remuneration Review Body",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT657",
+    "title": "Police Service of Northern Ireland",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1030",
+    "title": "Policy Profession",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1184",
+    "title": "Porton Biopharma Limited",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PC1386",
+    "title": "Post Office",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1210",
+    "title": "Preventing Sexual Violence in Conflict Initiative",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT532",
+    "title": "Prime Minister's Office, 10 Downing Street",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB446",
+    "title": "Prison Service Pay Review Body",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "IM327",
+    "title": "Prisons and Probation Ombudsman",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT342",
+    "title": "Privy Council Office",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT659",
+    "title": "Probation Board for Northern Ireland",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT723",
+    "title": "Probation Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT971",
+    "title": "Professional Standards Authority for Health and Social Care",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1385",
+    "title": "Project Delivery Function",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1265",
+    "title": "Public Health Agency (Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1077",
+    "title": "Public Health Wales",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT962",
+    "title": "Public Prosecution Service for Northern Ireland",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA1366",
+    "title": "Public Sector Fraud Authority",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1344",
+    "title": "Public Services Ombudsman for Wales",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1192",
+    "title": "Pubs Code Adjudicator",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA40",
+    "title": "Queen Elizabeth II Conference Centre",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1427",
+    "title": "Race Equality Unit",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT249",
+    "title": "Rail Accident Investigation Branch",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1207",
+    "title": "Rail Safety and Standards Board",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1331",
+    "title": "Reclaim Fund Ltd",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1218",
+    "title": "Regulator of Social Housing",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1414",
+    "title": "Regulatory Horizons Council",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB354",
+    "title": "Regulatory Policy Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1242",
+    "title": "Remploy Pension Scheme Trustees Ltd ",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1379",
+    "title": "Research Collaboration Advice Team",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1138",
+    "title": "Reserve Forces Appeal Tribunal",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1065",
+    "title": "Reserve Forces' and Cadets' Associations (RFCA)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB530",
+    "title": "Review Body on Doctors' and Dentists' Remuneration",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB308",
+    "title": "Royal Air Force Museum",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB182",
+    "title": "Royal Armouries Museum",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB310",
+    "title": "Royal Marines Museum",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA114",
+    "title": "Royal Mint",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB434",
+    "title": "Royal Mint Advisory Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB291",
+    "title": "Royal Museums Greenwich",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT409",
+    "title": "Royal Navy Submarine Museum",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA41",
+    "title": "Royal Parks",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA58",
+    "title": "Rural Payments Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PC387",
+    "title": "S4C",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1325",
+    "title": "Salix Finance Ltd",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB414",
+    "title": "School Teachers' Review Body",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1394",
+    "title": "Science Advisory Committees",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB135",
+    "title": "Science and Technology Facilities Council",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB177",
+    "title": "Science Museum Group",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB402",
+    "title": "Scientific Advisory Committee on the Medical Implications of Less-Lethal Weapons",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1311",
+    "title": "Scientific Advisory Group for Emergencies",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D1423",
+    "title": "Scotland Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT205",
+    "title": "Seafish",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT305",
+    "title": "Secret Intelligence Service",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB264",
+    "title": "Security Industry Authority",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB367",
+    "title": "Security Vetting Appeals Panel",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1220",
+    "title": "Sellafield Ltd",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1135",
+    "title": "Senior Courts Costs Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB368",
+    "title": "Senior Salaries Review Body ",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB295",
+    "title": "Sentencing Council for England and Wales",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D115",
+    "title": "Serious Fraud Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1168",
+    "title": "Service Complaints Ombudsman ",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PC1371",
+    "title": "Sheffield Forgemasters International Ltd",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1093",
+    "title": "Single Source Regulations Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB183",
+    "title": "Sir John Soane's Museum",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1237",
+    "title": "Small Business Commissioner",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1193",
+    "title": "Social Mobility Commission",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB578",
+    "title": "Social Science Research Committee",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB232",
+    "title": "Social Security Advisory Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1298",
+    "title": "Social Work England",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT546",
+    "title": "South Downs National Park Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB190",
+    "title": "Sport England",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT694",
+    "title": "Sport Northern Ireland (Sports Council for Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT734",
+    "title": "Sports Council for Wales",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB184",
+    "title": "Sports Grounds Safety Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA243",
+    "title": "Standards and Testing Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1300",
+    "title": "Strategic Command",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB27",
+    "title": "Student Loans Company",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1314",
+    "title": "Submarine Delivery Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1377",
+    "title": "Subsidy Advice Unit",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D435",
+    "title": "Supreme Court of the United Kingdom",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB571",
+    "title": "Tate",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA1256",
+    "title": "Teaching Regulation Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB274",
+    "title": "Technical Advisory Board",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1157",
+    "title": "Technology and Construction Court",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT433",
+    "title": "The Adjudicatorâs Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB438",
+    "title": "The Advisory Council on National Records and Archives",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "CO1224",
+    "title": "The Business and Property Courts",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1229",
+    "title": "The Business List",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D98",
+    "title": "The Charity Commission",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1228",
+    "title": "The Competition List",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT100",
+    "title": "The Crown Estate",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "IM1203",
+    "title": "The Electoral Commission",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1179",
+    "title": "The Executive Office (Northern Ireland)",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "CO1227",
+    "title": "The Financial List",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1408",
+    "title": "The Independent Commission for Reconciliation and Information Recovery",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA32",
+    "title": "The Insolvency Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1226",
+    "title": "The Intellectual Property List",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "IM329",
+    "title": "The Legal Ombudsman",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA71",
+    "title": "The National Archives",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB1283",
+    "title": "The National Lottery Community Fund",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB401",
+    "title": "The Oil and Pipelines Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT519",
+    "title": "The Parliamentary and Health Service Ombudsman ",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB235",
+    "title": "The Pension Protection Fund Ombudsman",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB236",
+    "title": "The Pensions Ombudsman",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB234",
+    "title": "The Pensions Regulator",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "CO1225",
+    "title": "The Property, Trusts and Probate List",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "AG1407",
+    "title": "The Queen Elizabeth Memorial Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "CO1230",
+    "title": "The Revenue List",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB382",
+    "title": "The Reviewing Committee on the Export of Works of Art and Objects of Cultural Interest",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "DA1020",
+    "title": "The Scottish Government",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT304",
+    "title": "The Security Service",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB380",
+    "title": "The Theatres Trust",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D240",
+    "title": "The Water Services Regulation Authority ",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1376",
+    "title": "Trade and Agriculture Commission",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1327",
+    "title": "Trade Remedies Authority",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB465",
+    "title": "Traffic Commissioners for Great Britain",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1118",
+    "title": "Transport Focus",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB383",
+    "title": "Treasure Valuation Committee",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB448",
+    "title": "Tribunal Procedure Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB462",
+    "title": "Trinity House",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB377",
+    "title": "UK Anti-Doping",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1288",
+    "title": "UK Asset Resolution Limited",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB137",
+    "title": "UK Atomic Energy Authority",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1365",
+    "title": "UK Commission on Covid Commemoration",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1268",
+    "title": "UK Council for Internet Safety",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA82",
+    "title": "UK Debt Management Office",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1312",
+    "title": "UK Defence and Security Exports",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "D241",
+    "title": "UK Export Finance",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1186",
+    "title": "UK Government Investments",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA1328",
+    "title": "UK Health Security Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1171",
+    "title": "UK Holocaust Memorial Foundation",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA51",
+    "title": "UK Hydrographic Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1437",
+    "title": "UK Industrial Fusion Solutions",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1398",
+    "title": "UK Infrastructure Bank",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1411",
+    "title": "UK Integrated Security Fund",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1330",
+    "title": "UK National Authority for Counter-Eavesdropping",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1296",
+    "title": "UK National Contact Point",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1326",
+    "title": "UK National Screening Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1221",
+    "title": "UK Research and Innovation",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "CS1431",
+    "title": "UK Resilience Academy",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1391",
+    "title": "UK Shared Business Services Ltd",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA31",
+    "title": "UK Space Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB185",
+    "title": "UK Sport",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "D116",
+    "title": "UK Statistics Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT554",
+    "title": "UK Visas and Immigration",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PC1435",
+    "title": "United Kingdom National Nuclear Laboratory",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1112",
+    "title": "United Kingdom Reserve Forces Association",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1294",
+    "title": "United Kingdom Security Vetting",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1142",
+    "title": "Upper Tribunal (Administrative Appeals Chamber)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1144",
+    "title": "Upper Tribunal (Immigration and Asylum Chamber)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1141",
+    "title": "Upper Tribunal (Lands Chamber)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1140",
+    "title": "Upper Tribunal (Tax and Chancery Chamber)",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA87",
+    "title": "Valuation Office Agency",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB1204",
+    "title": "Valuation Tribunal for England ",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB375",
+    "title": "Valuation Tribunal Service",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA80",
+    "title": "Vehicle Certification Agency",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB403",
+    "title": "Veterans Advisory and Pensions Committees",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1087",
+    "title": "Veterans UK",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA60",
+    "title": "Veterinary Medicines Directorate",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB212",
+    "title": "Veterinary Products Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB326",
+    "title": "Victims' Commissioner",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB378",
+    "title": "Victoria and Albert Museum",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB186",
+    "title": "VisitBritain",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB376",
+    "title": "VisitEngland",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT908",
+    "title": "Wales Audit Office",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1422",
+    "title": "Wales Office",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "PB187",
+    "title": "Wallace Collection",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "DA1019",
+    "title": "Welsh Government",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1101",
+    "title": "Welsh Language Commissioner",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT316",
+    "title": "Westminster Foundation for Democracy",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "EA62",
+    "title": "Wilton Park",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1285",
+    "title": "Windrush Commemoration Committee",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT1428",
+    "title": "Women and Equalities Unit",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "OT547",
+    "title": "Yorkshire Dales National Park Authority",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "OT1322",
+    "title": "Youth Custody Service",
+    "govuk_status": "live"
+  },
+  {
+    "analytics_identifier": "EA697",
+    "title": "Youth Justice Agency of Northern Ireland",
+    "govuk_status": "exempt"
+  },
+  {
+    "analytics_identifier": "PB302",
+    "title": "Youth Justice Board for England and Wales",
+    "govuk_status": "live"
+  }
+]

@@ -1,20 +1,124 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% block pageTitle %}
+Design maturity survey
+{% endblock %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    {% if errorMessage %}
+    {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+    {
+    text: errorMessage,
+    href: "#department-code"
+    }
+    ]
+    }) }}
+    {% endif %}
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+    <h1 class="govuk-heading-xl">Measure design maturity</h1>
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
+    <p class="govuk-body-l">
+      Assess and understand how your organisation approaches and understands design.
+    </p>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+
   </div>
 </div>
 
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+  <div class="govuk-grid-column-one-half">
+    <div class="app-card govuk-!-padding-6"
+      style="background: #f8f8f8; border: 1px solid #b1b4b6; height: 100%; display: flex; flex-direction: column;">
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-4">I have a survey code</h2>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">
+        You can sign in with your organisation code to complete the survey for your organisation.
+      </p>
+
+      <div style="margin-top: auto;">
+        <a href="/sign-in" class="govuk-button govuk-!-margin-bottom-0">
+          Fill out a survey
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <div class="app-card govuk-!-padding-6"
+      style="background: #f8f8f8; border: 1px solid #b1b4b6; height: 100%; display: flex; flex-direction: column;">
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-4">I want to run a survey</h2>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">
+        Sign up to run a survey in your organisation and view results and analysis.
+      </p>
+
+      <div style="margin-top: auto;">
+        <a href="/sign-up" class="govuk-button govuk-!-margin-bottom-0">Register organisation</a>
+        <a href="/admin/sign-in" class="govuk-button govuk-!-margin-bottom-0">Sign in</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8" id="benefits">Benefits of measuring maturity</h2>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-!-margin-bottom-6">
+      <h3 class="govuk-heading-m">Immediate insights</h3>
+      <p class="govuk-body">Get a clear picture of your organisation's design strengths and opportunities.</p>
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-!-margin-bottom-6">
+      <h3 class="govuk-heading-m">Evidence-based decisions</h3>
+      <p class="govuk-body">Use data to inform your design strategy and prioritise improvements.</p>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-!-margin-bottom-6">
+      <h3 class="govuk-heading-m">Track progress</h3>
+      <p class="govuk-body">Monitor your journey towards design maturity.</p>
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-!-margin-bottom-6">
+      <h3 class="govuk-heading-m">Benchmark performance</h3>
+      <p class="govuk-body">Compare your design maturity with other departments over time.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l govuk-!-margin-top-8" id="benefits">Who runs this product</h2>
+
+    <p class="govuk-body">This product has been developed and is maintained by the <a
+        href="http://design.education.gov.uk/designops">DesignOps team</a> in the Department for Education.</p>
+
+    <p class="govuk-body">If you have any questions or feedback, please contact us at <a
+        href="mailto:design.ops@education.gov.uk">design.ops@education.gov.uk</a>.</p>
+
+
+  </div>
+</div>
+
+
+
+</div>
+
+</div>
 {% endblock %}

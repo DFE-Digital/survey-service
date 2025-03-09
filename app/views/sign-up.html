@@ -1,0 +1,134 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{% if errorMessage %}Error: {% endif %}Register your organisation - Design maturity survey
+{% endblock %}
+
+{% block beforeContent %}
+<script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<link rel="stylesheet" href="/public/stylesheets/accessible-autocomplete.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if errorMessage %}
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: errorList
+    }) }}
+    {% endif %}
+
+    {% if success %}
+    {{ govukNotificationBanner({
+      text: "Your registration request has been submitted. We'll review it within 24 hours and get back to you by email.",
+      type: "success"
+    }) }}
+    {% else %}
+    <h1 class="govuk-heading-xl">Register your organisation</h1>
+
+    <p class="govuk-body">Register to run design maturity surveys in your organisation. Once approved, you'll be able to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Send survey invites to your team</li>
+      <li>View results and analysis</li>
+      <li>Track your organisation's design maturity over time</li>
+    </ul>
+
+    <form action="/sign-up" method="post" novalidate>
+      {{ govukInput({
+        label: {
+          text: "First name",
+          classes: "govuk-label--m"
+        },
+        id: "first-name",
+        name: "firstName",
+        type: "text",
+        autocomplete: "given-name",
+        errorMessage: errors.firstName
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last name",
+          classes: "govuk-label--m"
+        },
+        id: "last-name",
+        name: "lastName",
+        type: "text",
+        autocomplete: "family-name",
+        errorMessage: errors.lastName
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email address",
+          classes: "govuk-label--m"
+        },
+        hint: {
+          text: "Must be a government email address"
+        },
+        id: "email",
+        name: "email",
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false,
+        errorMessage: errors.email
+      }) }}
+
+      <div class="govuk-form-group {% if errors.department %}govuk-form-group--error{% endif %}">
+        <label class="govuk-label govuk-label--m" for="department">
+          Department or organisation
+        </label>
+        {% if errors.department %}
+        <p id="department-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> {{ errors.department.text }}
+        </p>
+        {% endif %}
+        <select class="govuk-select" id="department" name="department">
+          <option value="">Select your organisation</option>
+          {% for dept in departments %}
+            <option value="{{ dept.value }}" {% if data.department == dept.value %}selected{% endif %}>{{ dept.text }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      {{ govukTextarea({
+        name: "justification",
+        id: "justification",
+        label: {
+          text: "Why do you need access?",
+          classes: "govuk-label--m"
+        },
+        hint: {
+          text: "Briefly explain your role and why you need to run design maturity surveys"
+        },
+        errorMessage: errors.justification
+      }) }}
+
+      {{ govukButton({
+        text: "Submit registration"
+      }) }}
+    </form>
+
+    <p class="govuk-body">
+      Already registered? <a href="/sign-in" class="govuk-link">Sign in here</a>
+    </p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script nonce="{{ cspNonce }}">
+  window.addEventListener('load', function() {
+    if (typeof accessibleAutocomplete !== 'undefined') {
+      accessibleAutocomplete.enhanceSelectElement({
+        defaultValue: '',
+        selectElement: document.querySelector('#department')
+      });
+    } else {
+      console.error('Accessible autocomplete not loaded');
+    }
+  });
+</script>
+{% endblock %} 

@@ -1,0 +1,153 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Manage registrations - Design maturity survey
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Manage registrations</h1>
+
+    {% if successMessage %}
+    {{ govukNotificationBanner({
+      text: successMessage,
+      type: "success"
+    }) }}
+    {% endif %}
+
+    {% if pendingCount > 0 %}
+    <section class="govuk-!-margin-bottom-8">
+      <h2 class="govuk-heading-l">Pending registrations ({{ pendingCount }})</h2>
+      
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Name</th>
+            <th class="govuk-table__header">Email</th>
+            <th class="govuk-table__header">Department</th>
+            <th class="govuk-table__header">Justification</th>
+            <th class="govuk-table__header">Submitted</th>
+            <th class="govuk-table__header">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for reg in pending %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{ reg.name }}</td>
+            <td class="govuk-table__cell">{{ reg.email }}</td>
+            <td class="govuk-table__cell">{{ reg.department }}</td>
+            <td class="govuk-table__cell">{{ reg.reason }}</td>
+            <td class="govuk-table__cell">{{ reg.submitted | date }}</td>
+            <td class="govuk-table__cell">
+              <a href="/admin/registrations/{{ reg.id }}/approve" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 govuk-!-margin-right-1 js-approve-registration">Approve</a>
+              <a href="/admin/registrations/{{ reg.id }}/reject" class="govuk-button govuk-button--warning govuk-!-margin-bottom-0 js-reject-registration">Reject</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+    {% endif %}
+
+    <section>
+      <h2 class="govuk-heading-l">Registration history</h2>
+      
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Name</th>
+            <th class="govuk-table__header">Email</th>
+            <th class="govuk-table__header">Department</th>
+            <th class="govuk-table__header">Status</th>
+            <th class="govuk-table__header">Updated</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for reg in history %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{ reg.name }}</td>
+            <td class="govuk-table__cell">{{ reg.email }}</td>
+            <td class="govuk-table__cell">{{ reg.department }}</td>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag {% if reg.status === 'rejected' %}govuk-tag--red{% endif %}">
+                {{ reg.status | capitalize }}
+              </strong>
+            </td>
+            <td class="govuk-table__cell">{{ reg.updated | date }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </div>
+</div>
+
+<!-- Rejection reason modal -->
+<div class="govuk-modal" id="rejection-modal" hidden>
+  <div class="govuk-modal__overlay"></div>
+  <div class="govuk-modal__container" role="dialog" aria-modal="true">
+    <div class="govuk-modal__header">
+      <h2 class="govuk-modal__title">Reject registration</h2>
+      <button class="govuk-modal__close" aria-label="Close modal">×</button>
+    </div>
+    
+    <div class="govuk-modal__content">
+      <form id="rejection-form" method="post">
+        {{ govukTextarea({
+          name: "rejection_reason",
+          id: "rejection_reason",
+          label: {
+            text: "Reason for rejection"
+          },
+          hint: {
+            text: "This will be sent to the user in an email"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Reject registration",
+          classes: "govuk-button--warning"
+        }) }}
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script nonce="{{ cspNonce }}">
+  // Handle approve/reject buttons
+  document.addEventListener('DOMContentLoaded', function() {
+    // Approve registration
+    document.querySelectorAll('.js-approve-registration').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (confirm('Are you sure you want to approve this registration?')) {
+          const form = document.createElement('form');
+          form.method = 'POST';
+          form.action = this.href;
+          document.body.appendChild(form);
+          form.submit();
+        }
+      });
+    });
+
+    // Show rejection modal
+    document.querySelectorAll('.js-reject-registration').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const modal = document.getElementById('rejection-modal');
+        const form = document.getElementById('rejection-form');
+        form.action = this.href;
+        modal.hidden = false;
+      });
+    });
+
+    // Close modal
+    document.querySelector('.govuk-modal__close').addEventListener('click', function() {
+      document.getElementById('rejection-modal').hidden = true;
+    });
+  });
+</script>
+{% endblock %} 

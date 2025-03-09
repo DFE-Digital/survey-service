@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ question.theme_name }} – Question {{ question.question_id }} – Service maturity survey
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="{{ backLink }}" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if errorMessage %}
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#question-{{ question.question_id }}-1">{{ errorMessage }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+
+    <form method="POST" novalidate>
+      <div class="govuk-form-group {% if errorMessage %}govuk-form-group--error{% endif %}">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Question {{ question.question_id }} of 20</span>
+            <h1 class="govuk-fieldset__heading">{{ question.question_text }}
+            </h1>
+          </legend>
+
+          {% if errorMessage %}
+            <p id="question-{{ question.question_id }}-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> {{ errorMessage }}
+            </p>
+          {% endif %}
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            {% for option in ratingScale %}
+              {% set labelParts = option.label.split(' – ') %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="question-{{ question.question_id }}-{{ option.value }}" 
+                  name="answer" type="radio" value="{{ option.value }}"
+                  {{ 'checked' if option.value == previousAnswer }}
+                  {% if errorMessage %}aria-describedby="question-{{ question.question_id }}-error"{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="question-{{ question.question_id }}-{{ option.value }}">
+                  {{ labelParts[0] }}
+                </label>
+                {% if labelParts[1] %}
+                  <div id="question-{{ question.question_id }}-{{ option.value }}-hint" class="govuk-hint govuk-radios__hint">
+                    {{ labelParts[1] }}
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+{% endblock %} 

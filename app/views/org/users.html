@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Organisation users - Design maturity survey
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Organisation users</h1>
+
+    {% if users and users.length > 0 %}
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Email</th>
+            <th scope="col" class="govuk-table__header">Role</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for user in users %}
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{ user.first_name }} {{ user.last_name }}</td>
+              <td class="govuk-table__cell">{{ user.email }}</td>
+              <td class="govuk-table__cell">
+                {% if user.is_org_owner %}
+                  <strong class="govuk-tag">Owner</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--blue">Member</strong>
+                {% endif %}
+              </td>
+              <td class="govuk-table__cell">
+                {% if user.is_approved %}
+                  <strong class="govuk-tag govuk-tag--green">Approved</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--yellow">Pending</strong>
+                {% endif %}
+              </td>
+              <td class="govuk-table__cell">
+                {% if not user.is_approved %}
+                  <form action="/org/users/{{ user.id }}/approve" method="post" class="govuk-!-display-inline">
+                    {{ govukButton({
+                      text: "Approve",
+                      classes: "govuk-button--secondary govuk-!-margin-bottom-0"
+                    }) }}
+                  </form>
+                {% endif %}
+                {% if not user.is_org_owner %}
+                  <form action="/org/users/{{ user.id }}/delete" method="post" class="govuk-!-display-inline">
+                    {{ govukButton({
+                      text: "Remove",
+                      classes: "govuk-button--warning govuk-!-margin-bottom-0"
+                    }) }}
+                  </form>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="govuk-body">No users in your organisation yet.</p>
+    {% endif %}
+
+    <h2 class="govuk-heading-l govuk-!-margin-top-6">Invite a new user</h2>
+    
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/org/users/invite" method="post" novalidate>
+          {{ govukInput({
+            label: {
+              text: "Email address",
+              classes: "govuk-label--m"
+            },
+            id: "email",
+            name: "email",
+            type: "email",
+            errorMessage: errors.email and {
+              text: errors.email
+            }
+          }) }}
+
+          {{ govukButton({
+            text: "Send invite"
+          }) }}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} 

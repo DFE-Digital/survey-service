@@ -1,0 +1,16 @@
+{% if data.cookies_policy.analytics %}
+  <!-- Google tag (gtag.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    {% if data.dataLayer %}
+      // Add any server-side events to the dataLayer
+      {% for event in data.dataLayer %}
+        dataLayer.push({{ event | dump | safe }});
+      {% endfor %}
+    {% endif %}
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GM3038YDYJ');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GM3038YDYJ"></script>
+{% endif %}   

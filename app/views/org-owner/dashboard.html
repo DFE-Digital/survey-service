@@ -1,0 +1,163 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Organisation dashboard - Design maturity survey
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">{{ department }} dashboard</h1>
+
+    {% if successMessage %}
+    {{ govukNotificationBanner({
+      text: successMessage,
+      type: "success"
+    }) }}
+    {% endif %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+          <h2 class="govuk-panel__title">
+            {{ totalResponses }}
+          </h2>
+          <div class="govuk-panel__body">
+            Total survey responses
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+          <h2 class="govuk-panel__title">
+            {{ pendingInvites }}
+          </h2>
+          <div class="govuk-panel__body">
+            Pending invites
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+          <h2 class="govuk-panel__title">
+            {{ averageScore | number("0.0") }}
+          </h2>
+          <div class="govuk-panel__body">
+            Average maturity score
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">Survey management</h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#send-invites">
+            Send invites
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#invite-history">
+            Invite history
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#department-code">
+            Department code
+          </a>
+        </li>
+      </ul>
+
+      <div class="govuk-tabs__panel" id="send-invites">
+        <h2 class="govuk-heading-l">Send survey invites</h2>
+        
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <form action="/org-owner/send-invites" method="post" novalidate>
+              {{ govukTextarea({
+                name: "emails",
+                id: "emails",
+                label: {
+                  text: "Email addresses",
+                  classes: "govuk-label--m"
+                },
+                hint: {
+                  text: "Enter email addresses, one per line"
+                },
+                errorMessage: errors.emails
+              }) }}
+
+              {{ govukButton({
+                text: "Send invites"
+              }) }}
+            </form>
+
+            <h3 class="govuk-heading-m govuk-!-margin-top-6">Email template</h3>
+            <div class="govuk-inset-text">
+              <p>You can also copy this template and send it yourself:</p>
+              <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4">
+              <p>Subject: Complete the design maturity survey for {{ department }}</p>
+              <p>Body:</p>
+              <p>Hello,</p>
+              <p>Please complete our design maturity survey to help us understand and improve our design practices.</p>
+              <p>Use this department code when signing in: {{ departmentCode }}</p>
+              <p>The survey takes about 5 minutes to complete.</p>
+              <p><a href="{{ surveyUrl }}">Start the survey</a></p>
+              <p>Thanks,<br>{{ user.firstName }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="invite-history">
+        <h2 class="govuk-heading-l">Invite history</h2>
+        
+        {% if invites.length > 0 %}
+        {{ govukTable({
+          head: [
+            {
+              text: "Email"
+            },
+            {
+              text: "Sent"
+            },
+            {
+              text: "Status"
+            }
+          ],
+          rows: invites | map(invite => [
+            {
+              text: invite.recipient_email
+            },
+            {
+              text: invite.sent_at | date("D MMM YYYY")
+            },
+            {
+              text: invite.status | capitalize,
+              classes: "govuk-tag " + (invite.status === 'completed' ? "govuk-tag--green" : "govuk-tag--grey")
+            }
+          ])
+        }) }}
+        {% else %}
+        <p class="govuk-body">No invites sent yet.</p>
+        {% endif %}
+      </div>
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="department-code">
+        <h2 class="govuk-heading-l">Department code</h2>
+        
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <p class="govuk-body">Your department code is:</p>
+            <div class="govuk-inset-text govuk-heading-l govuk-!-margin-top-0">
+              {{ departmentCode }}
+            </div>
+            <p class="govuk-body">Share this code with people in your department so they can complete the survey.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} 

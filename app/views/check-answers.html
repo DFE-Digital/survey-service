@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers – Service maturity survey
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="{{ backLink }}" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-xl">Check your answers</h1>
+
+    {% set unansweredQuestions = [] %}
+    {% for question in questions %}
+      {% if not data['answers'][question.question_id] %}
+        {% set unansweredQuestions = (unansweredQuestions.push(question), unansweredQuestions) %}
+      {% endif %}
+    {% endfor %}
+
+    {% if unansweredQuestions.length > 0 %}
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <p>You must answer all questions before submitting the survey.</p>
+          <p>The following questions have not been answered:</p>
+          <ul class="govuk-list govuk-error-summary__list">
+            {% for question in unansweredQuestions %}
+              <li>
+                <a href="/survey/question-{{ question.question_id }}?return=check-answers">Question {{ question.question_id }}: {{ question.question_text }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+
+    {% for question in questions %}
+      <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+        <div class="govuk-summary-list__row {% if not data['answers'][question.question_id] %}govuk-summary-list__row--no-actions{% endif %}">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            <span class="govuk-caption-m">Question {{ question.question_id }} of 20</span>
+            {{ question.question_text }}
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            {% set answer = data['answers'][question.question_id] %}
+            {% if answer %}
+              {% set answerLabel = 'Not answered' %}
+              {% for option in ratingScale %}
+                {% if option.value == answer %}
+                  {% set answerLabel = option.label.split('–')[0].trim() %}
+                {% endif %}
+              {% endfor %}
+              {{ answerLabel }}
+            {% else %}
+              <span class="govuk-error-message">Not answered</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/survey/question-{{ question.question_id }}?return=check-answers">
+              Change<span class="govuk-visually-hidden"> question {{ question.question_id }}: {{ question.question_text }}</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+    {% endfor %}
+
+    <div class="govuk-button-group">
+      <a href="/survey/role-info" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+        Continue
+      </a>
+    </div>
+
+  </div>
+</div>
+{% endblock %} 

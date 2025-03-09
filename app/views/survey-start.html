@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Survey overview – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      You're signed in
+    </h1>
+
+    <p class="govuk-body">You're completing the survey for:</p>
+
+    <div class="govuk-inset-text">
+      <strong> {{ organization.analytics_identifier }}</strong> - {{ organization.title }}
+    </div>
+
+   <p class="govuk-body">If this is not the correct organisation, <a href="/sign-out" class="govuk-link">sign out and try again</a>.</p>
+
+ 
+ 
+    {{ govukButton({
+      text: "Start survey",
+      href: "/survey/question-1",
+      isStartButton: true
+    }) }}
+
+  </div>
+</div>
+{% endblock %} 

@@ -1,0 +1,115 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Your role - Service Maturity Assessment
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="/survey/check-answers" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if errorMessage %}
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+            <h2 class="govuk-error-summary__title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>{{ errorMessage }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <form method="post">
+        <h1 class="govuk-heading-l">About you (optional)</h1>
+        
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="role">
+              What is your role?
+            </label>
+          </h2>
+          <div id="role-hint" class="govuk-hint">
+            Start typing to search for your role
+          </div>
+          <select class="govuk-select" id="role" name="role" data-module="autocomplete">
+            <option value="">Select a role (optional)</option>
+            {% for group in roleOptions %}
+              <optgroup label="{{ group.text }}">
+                {% for item in group.items %}
+                  <option value="{{ item.value }}" {% if data.role_info.role == item.value %}selected{% endif %}>{{ item.text }}</option>
+                {% endfor %}
+              </optgroup>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="grade">
+              What is your grade?
+            </label>
+          </h2>
+          <div id="grade-hint" class="govuk-hint">
+            Or equivalent if your grades are different
+          </div>
+          <select class="govuk-select" id="grade" name="grade" data-module="autocomplete" aria-describedby="grade-hint">
+            <option value="">Select a grade (optional)</option>
+            <option value="Administrative Assistant (AA)" {% if data.role_info.grade == "Administrative Assistant (AA)" %}selected{% endif %}>Administrative Assistant (AA)</option>
+            <option value="Administrative Officer (AO)" {% if data.role_info.grade == "Administrative Officer (AO)" %}selected{% endif %}>Administrative Officer (AO)</option>
+            <option value="Executive Officer (EO)" {% if data.role_info.grade == "Executive Officer (EO)" %}selected{% endif %}>Executive Officer (EO)</option>
+            <option value="Higher Executive Officer (HEO)" {% if data.role_info.grade == "Higher Executive Officer (HEO)" %}selected{% endif %}>Higher Executive Officer (HEO)</option>
+            <option value="Senior Executive Officer (SEO)" {% if data.role_info.grade == "Senior Executive Officer (SEO)" %}selected{% endif %}>Senior Executive Officer (SEO)</option>
+            <option value="Grade 7" {% if data.role_info.grade == "Grade 7" %}selected{% endif %}>Grade 7</option>
+            <option value="Grade 6" {% if data.role_info.grade == "Grade 6" %}selected{% endif %}>Grade 6</option>
+            <option value="Senior Civil Service (SCS1)" {% if data.role_info.grade == "Senior Civil Service (SCS1)" %}selected{% endif %}>Senior Civil Service (SCS1)</option>
+            <option value="Senior Civil Service (SCS2)" {% if data.role_info.grade == "Senior Civil Service (SCS2)" %}selected{% endif %}>Senior Civil Service (SCS2)</option>
+            <option value="Senior Civil Service (SCS3)" {% if data.role_info.grade == "Senior Civil Service (SCS3)" %}selected{% endif %}>Senior Civil Service (SCS3)</option>
+            <option value="Senior Civil Service (SCS4)" {% if data.role_info.grade == "Senior Civil Service (SCS4)" %}selected{% endif %}>Senior Civil Service (SCS4)</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="feedback">
+              Do you have any other feedback about service design in your organisation?
+            </label>
+          </h2>
+          <div id="feedback-hint" class="govuk-hint">
+            For example, challenges, successes, or areas where you'd like more support
+          </div>
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
+            <textarea class="govuk-textarea govuk-js-character-count" id="feedback" name="feedback" rows="5" aria-describedby="feedback-hint feedback-info" maxlength="1000">{{ data.role_info.feedback }}</textarea>
+            <div id="feedback-info" class="govuk-hint govuk-character-count__message">
+              You can enter up to 1000 characters
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button" name="action" value="continue">Continue</button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="action" value="skip">Skip this question</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#role')
+  })
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#grade')
+  })
+</script>
+{% endblock %} 

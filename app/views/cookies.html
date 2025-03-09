@@ -1,0 +1,191 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Cookies – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="js-cookies-page-success" hidden>
+      {{ govukNotificationBanner({
+        text: "Your cookie settings were saved",
+        type: "success"
+      }) }}
+    </div>
+
+    <h1 class="govuk-heading-xl">Cookies</h1>
+
+    <p class="govuk-body">Cookies are small files saved on your phone, tablet or computer when you visit a website.</p>
+    
+    <p class="govuk-body">We use cookies to make this service work and collect information about how you use it.</p>
+
+    <h2 class="govuk-heading-l">Essential cookies</h2>
+
+    <p class="govuk-body">Essential cookies keep your information secure while you use this service. We do not need to ask permission to use them.</p>
+
+    {{ govukTable({
+      caption: "Essential cookies we use",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Name"
+        },
+        {
+          text: "Purpose"
+        },
+        {
+          text: "Expires"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "service-maturity-survey-session"
+          },
+          {
+            text: "Stores information about your progress through the survey"
+          },
+          {
+            text: "When you close your browser"
+          }
+        ],
+        [
+          {
+            text: "cookies_policy"
+          },
+          {
+            text: "Saves your cookie consent settings"
+          },
+          {
+            text: "1 year"
+          }
+        ]
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-l">Analytics cookies (optional)</h2>
+
+    <p class="govuk-body">With your permission, we use Google Analytics to collect data about how you use this service. This information helps us to improve our service.</p>
+
+    <p class="govuk-body">Google Analytics stores anonymised information about:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>how you got to this service</li>
+      <li>the pages you visit and how long you spend on them</li>
+      <li>what you click on while you're visiting the service</li>
+    </ul>
+
+    {{ govukTable({
+      caption: "Google Analytics cookies we use",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Name"
+        },
+        {
+          text: "Purpose"
+        },
+        {
+          text: "Expires"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "_ga"
+          },
+          {
+            text: "Helps us count how many people visit the service"
+          },
+          {
+            text: "2 years"
+          }
+        ],
+        [
+          {
+            text: "_ga_G-GM3038YDYJ"
+          },
+          {
+            text: "Helps us count how many people visit the service"
+          },
+          {
+            text: "2 years"
+          }
+        ]
+      ]
+    }) }}
+
+    <div class="js-cookies-page-form">
+      {{ govukRadios({
+        idPrefix: "analytics",
+        name: "analytics",
+        fieldset: {
+          legend: {
+            text: "Do you want to accept analytics cookies?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save cookie settings",
+        classes: "js-cookies-page-save"
+      }) }}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.js-cookies-page-form');
+    const successBanner = document.querySelector('.js-cookies-page-success');
+    const saveButton = document.querySelector('.js-cookies-page-save');
+    const analyticsRadios = document.querySelectorAll('input[name="analytics"]');
+
+    // Set initial state from cookie
+    const cookiePolicy = document.cookie.split(';')
+      .find(c => c.trim().startsWith('cookies_policy='));
+    
+    if (cookiePolicy) {
+      try {
+        const policy = JSON.parse(cookiePolicy.split('=')[1]);
+        const value = policy.analytics ? 'yes' : 'no';
+        document.querySelector(`input[name="analytics"][value="${value}"]`).checked = true;
+      } catch (e) {
+        console.error('Error parsing cookie policy:', e);
+      }
+    }
+
+    // Handle form submission
+    saveButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      const analytics = document.querySelector('input[name="analytics"]:checked');
+      
+      if (analytics) {
+        const cookiePolicy = {
+          analytics: analytics.value === 'yes',
+          essential: true
+        };
+        
+        document.cookie = 'cookies_policy=' + JSON.stringify(cookiePolicy) + '; path=/; max-age=31557600';
+        successBanner.removeAttribute('hidden');
+        window.scrollTo(0, 0);
+      }
+    });
+  });
+</script>
+{% endblock %} 

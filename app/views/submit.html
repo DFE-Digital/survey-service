@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Submit your survey - Service Maturity Assessment
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="/survey/role-info" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if errorMessage %}
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+            <h2 class="govuk-error-summary__title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>{{ errorMessage }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <h1 class="govuk-heading-l">Submit your survey</h1>
+
+      <p class="govuk-body">You're about to submit your survey for {{ data.organization.title }}.</p>
+
+      {% if data.role_info.role or data.role_info.grade %}
+        <h2 class="govuk-heading-m">About you</h2>
+        <dl class="govuk-summary-list">
+          {% if data.role_info.role %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Role</dt>
+              <dd class="govuk-summary-list__value">{{ data.role_info.role }}</dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/survey/role-info">Change<span class="govuk-visually-hidden"> role</span></a>
+              </dd>
+            </div>
+          {% endif %}
+          {% if data.role_info.grade %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Grade</dt>
+              <dd class="govuk-summary-list__value">{{ data.role_info.grade }}</dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/survey/role-info">Change<span class="govuk-visually-hidden"> grade</span></a>
+              </dd>
+            </div>
+          {% endif %}
+        </dl>
+      {% endif %}
+
+      <form action="/survey/submit" method="post">
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">Submit survey</button>
+          <a class="govuk-link" href="/survey/check-answers">Return to check your answers</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %} 

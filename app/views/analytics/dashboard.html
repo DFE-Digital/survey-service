@@ -1,0 +1,295 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Analytics Dashboard - Service Maturity Assessment
+{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Analytics Dashboard
+      {% if selectedDepartment %}
+        <span class="govuk-caption-xl">{{ selectedDepartment.organization_name }}</span>
+      {% endif %}
+    </h1>
+
+    <form class="govuk-form-group" action="/analytics/dashboard" method="get">
+      {{ govukSelect({
+        id: "department",
+        name: "department",
+        label: {
+          text: "Filter by department",
+          classes: "govuk-label--m"
+        },
+        items: [{
+          value: "",
+          text: "All departments"
+        }] | concat(departments)
+      }) }}
+
+      {{ govukButton({
+        text: "Apply filter",
+        classes: "govuk-button--secondary"
+      }) }}
+    </form>
+
+    {% if error %}
+      {{ govukNotificationBanner({
+        type: "error",
+        text: error
+      }) }}
+    {% else %}
+      {% if not basicStats %}
+        {{ govukNotificationBanner({
+          text: "No survey data available."
+        }) }}
+      {% else %}
+        {# Overview stats #}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            {{ govukPanel({
+              titleText: basicStats.total_responses,
+              text: "Total responses"
+            }) }}
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            {{ govukPanel({
+              titleText: (basicStats.average_score | round(2)) + "%",
+              text: "Average score"
+            }) }}
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            {{ govukPanel({
+              titleText: (basicStats.min_score | round(2)) + "%",
+              text: "Lowest score"
+            }) }}
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            {{ govukPanel({
+              titleText: (basicStats.max_score | round(2)) + "%",
+              text: "Highest score"
+            }) }}
+          </div>
+        </div>
+
+        {% if themeScores and themeScores | length > 0 %}
+          {# Theme scores #}
+          <div class="govuk-grid-row govuk-!-margin-top-6">
+            <div class="govuk-grid-column-full">
+              <h2 class="govuk-heading-l">Theme Analysis</h2>
+              <div id="themeChart"></div>
+              
+              {{ govukTable({
+                caption: "Theme Scores",
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: true,
+                head: [
+                  { text: "Theme" },
+                  { text: "Average Score" },
+                  { text: "Responses" }
+                ],
+                rows: themeScores | default([]) | map(theme => [
+                  { text: theme.theme | default("Unknown") },
+                  { text: ((theme.average_score | default(0)) | round(2)) + "%" },
+                  { text: theme.response_count | default(0) }
+                ])
+              }) }}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if roleStats and roleStats | length > 0 %}
+          {# Role analysis #}
+          <div class="govuk-grid-row govuk-!-margin-top-6">
+            <div class="govuk-grid-column-one-half">
+              <h2 class="govuk-heading-l">Responses by Role</h2>
+              <div id="roleChart"></div>
+              
+              {{ govukTable({
+                caption: "Role Distribution",
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: true,
+                head: [
+                  { text: "Role" },
+                  { text: "Count" },
+                  { text: "Average Score" }
+                ],
+                rows: roleStats | default([]) | map(role => [
+                  { text: role.respondent_role | default("Not specified") },
+                  { text: role.count | default(0) },
+                  { text: ((role.average_score | default(0)) | round(2)) + "%" }
+                ])
+              }) }}
+            </div>
+
+            {% if gradeStats and gradeStats | length > 0 %}
+              {# Grade analysis #}
+              <div class="govuk-grid-column-one-half">
+                <h2 class="govuk-heading-l">Responses by Grade</h2>
+                <div id="gradeChart"></div>
+                
+                {{ govukTable({
+                  caption: "Grade Distribution",
+                  captionClasses: "govuk-table__caption--m",
+                  firstCellIsHeader: true,
+                  head: [
+                    { text: "Grade" },
+                    { text: "Count" },
+                    { text: "Average Score" }
+                  ],
+                  rows: gradeStats | default([]) | map(grade => [
+                    { text: grade.respondent_grade | default("Not specified") },
+                    { text: grade.count | default(0) },
+                    { text: ((grade.average_score | default(0)) | round(2)) + "%" }
+                  ])
+                }) }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if trends and trends | length > 0 %}
+          {# Trends #}
+          <div class="govuk-grid-row govuk-!-margin-top-6">
+            <div class="govuk-grid-column-full">
+              <h2 class="govuk-heading-l">Trends</h2>
+              <div id="trendChart"></div>
+            </div>
+          </div>
+        {% endif %}
+
+        {# Insights #}
+        <div class="govuk-grid-row govuk-!-margin-top-6">
+          <div class="govuk-grid-column-full">
+            <h2 class="govuk-heading-l">Key Insights</h2>
+            
+            {% if insights %}
+              {{ govukInsetText({
+                html: "
+                  <h3 class='govuk-heading-s'>Strengths</h3>
+                  <ul class='govuk-list govuk-list--bullet'>
+                    <li>Best performing theme: " + insights.bestTheme.theme + " (" + insights.bestTheme.score + "%)</li>
+                    <li>Best performing question: Question " + insights.bestQuestion.id + " (" + insights.bestQuestion.score + "%)</li>
+                  </ul>
+                  <h3 class='govuk-heading-s'>Areas for Improvement</h3>
+                  <ul class='govuk-list govuk-list--bullet'>
+                    <li>Lowest performing theme: " + insights.worstTheme.theme + " (" + insights.worstTheme.score + "%)</li>
+                    <li>Lowest performing question: Question " + insights.worstQuestion.id + " (" + insights.worstQuestion.score + "%)</li>
+                  </ul>
+                "
+              }) }}
+            {% else %}
+              {{ govukInsetText({
+                text: "No survey responses available to generate insights."
+              }) }}
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>
+
+{% block bodyEnd %}
+  {{ super() }}
+  {% if not error and themeScores and themeScores | length > 0 %}
+    <script>
+      const chartData = {
+        themes: {
+          x: {{ themeScores | default([]) | map(theme => theme.theme | default("Unknown")) | tojson }},
+          y: {{ themeScores | default([]) | map(theme => theme.average_score | default(0)) | tojson }}
+        },
+        roles: {
+          values: {{ roleStats | default([]) | map(role => role.count | default(0)) | tojson }},
+          labels: {{ roleStats | default([]) | map(role => role.respondent_role | default("Not specified")) | tojson }}
+        },
+        grades: {
+          values: {{ gradeStats | default([]) | map(grade => grade.count | default(0)) | tojson }},
+          labels: {{ gradeStats | default([]) | map(grade => grade.respondent_grade | default("Not specified")) | tojson }}
+        },
+        trends: {
+          x: {{ trends | default([]) | map(trend => trend.period | default("")) | tojson }},
+          y: {{ trends | default([]) | map(trend => trend.average_score | default(0)) | tojson }},
+          responses: {{ trends | default([]) | map(trend => trend.responses | default(0)) | tojson }}
+        }
+      };
+
+      // Theme chart
+      Plotly.newPlot('themeChart', [{
+        x: chartData.themes.x,
+        y: chartData.themes.y,
+        type: 'bar',
+        marker: { color: '#1d70b8' }
+      }], {
+        title: 'Average Score by Theme',
+        yaxis: {
+          title: 'Score (%)',
+          range: [0, 100]
+        }
+      });
+
+      {% if roleStats and roleStats | length > 0 %}
+        // Role distribution chart
+        Plotly.newPlot('roleChart', [{
+          values: chartData.roles.values,
+          labels: chartData.roles.labels,
+          type: 'pie'
+        }], {
+          title: 'Response Distribution by Role'
+        });
+      {% endif %}
+
+      {% if gradeStats and gradeStats | length > 0 %}
+        // Grade distribution chart
+        Plotly.newPlot('gradeChart', [{
+          values: chartData.grades.values,
+          labels: chartData.grades.labels,
+          type: 'pie'
+        }], {
+          title: 'Response Distribution by Grade'
+        });
+      {% endif %}
+
+      {% if trends and trends | length > 0 %}
+        // Trend chart
+        Plotly.newPlot('trendChart', [
+          {
+            x: chartData.trends.x,
+            y: chartData.trends.y,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Average Score',
+            line: { color: '#1d70b8' }
+          },
+          {
+            x: chartData.trends.x,
+            y: chartData.trends.responses,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Number of Responses',
+            yaxis: 'y2',
+            line: { color: '#28a197' }
+          }
+        ], {
+          title: 'Score and Response Trends Over Time',
+          yaxis: {
+            title: 'Average Score (%)',
+            range: [0, 100]
+          },
+          yaxis2: {
+            title: 'Number of Responses',
+            overlaying: 'y',
+            side: 'right'
+          }
+        });
+      {% endif %}
+    </script>
+  {% endif %}
+{% endblock %}
+{% endblock %} 

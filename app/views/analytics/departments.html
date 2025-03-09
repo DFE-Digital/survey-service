@@ -1,0 +1,22 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Departments - Analytics
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Departments</h1>
+    <ul class="govuk-list govuk-list--bullet">
+      {% for department in departments %}
+        <li>
+          <a href="/analytics/dashboard/{{ department.department_code }}">
+            {{ department.organization_name }} ({{ department.response_count }} responses)
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %} 

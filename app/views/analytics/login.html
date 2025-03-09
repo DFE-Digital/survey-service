@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Analytics Login - Service Maturity Assessment
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if error %}
+      {{ govukNotificationBanner({
+        type: "error",
+        text: error
+      }) }}
+    {% endif %}
+
+    <h1 class="govuk-heading-xl">Analytics Dashboard Login</h1>
+
+    <form action="/analytics/login" method="post" novalidate>
+      {{ govukInput({
+        label: {
+          text: "Password",
+          classes: "govuk-label--m"
+        },
+        id: "password",
+        name: "password",
+        type: "password",
+        errorMessage: errors.password and {
+          text: errors.password
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Sign in"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %} 

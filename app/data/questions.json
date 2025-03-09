@@ -1,0 +1,178 @@
+{
+    "survey": {
+        "title": "Service Maturity Assessment",
+        "description": "This survey measures the maturity of service design. Responses will be used to track progress and identify areas for improvement.",
+        "themes": [
+            {
+                "theme_id": 1,
+                "theme_name": "Leadership and strategy",
+                "questions": [
+                    {
+                        "question_id": 1,
+                        "question_text": "Do leaders support and prioritise service design in decision-making?"
+                    },
+                    {
+                        "question_id": 2,
+                        "question_text": "Are service design principles included when new policies or services are developed?"
+                    }
+                ]
+            },
+            {
+                "theme_id": 2,
+                "theme_name": "Working on whole services",
+                "questions": [
+                    {
+                        "question_id": 3,
+                        "question_text": "Do teams work together on whole services, instead of just individual products?"
+                    },
+                    {
+                        "question_id": 4,
+                        "question_text": "Do we regularly map out how different services connect to create a better experience for users?"
+                    }
+                ]
+            },
+            {
+                "theme_id": 3,
+                "theme_name": "Designing for everyone",
+                "questions": [
+                    {
+                        "question_id": 5,
+                        "question_text": "Do we design services that are easy to use, accessible, and inclusive for all users?"
+                    },
+                    {
+                        "question_id": 6,
+                        "question_text": "Are accessibility and inclusion built into every stage of service development, rather than an afterthought?"
+                    }
+                ]
+            },
+            {
+                "theme_id": 4,
+                "theme_name": "Seeing the big picture",
+                "questions": [
+                    {
+                        "question_id": 7,
+                        "question_text": "Do we have a clear view of how all services fit together and what users experience?"
+                    },
+                    {
+                        "question_id": 8,
+                        "question_text": "Do we use service mapping to identify duplication and reduce unnecessary complexity?"
+                    }
+                ]
+            },
+            {
+                "theme_id": 5,
+                "theme_name": "Using evidence, not assumptions",
+                "questions": [
+                    {
+                        "question_id": 9,
+                        "question_text": "Do we use data, research, and real feedback to shape and improve services?"
+                    },
+                    {
+                        "question_id": 10,
+                        "question_text": "Are decisions about services based on evidence, rather than assumptions or personal opinions?"
+                    }
+                ]
+            },
+            {
+                "theme_id": 6,
+                "theme_name": "Improving services over time",
+                "questions": [
+                    {
+                        "question_id": 11,
+                        "question_text": "Do we regularly update and improve services based on feedback and data?"
+                    },
+                    {
+                        "question_id": 12,
+                        "question_text": "Do teams have the time and support they need to iterate and improve services, rather than just delivering new things?"
+                    }
+                ]
+            },
+            {
+                "theme_id": 7,
+                "theme_name": "Using the right tools and standards",
+                "questions": [
+                    {
+                        "question_id": 13,
+                        "question_text": "Do we follow government standards, patterns, and best practices?"
+                    },
+                    {
+                        "question_id": 14,
+                        "question_text": "Is there a shared understanding of what good service design looks like across different teams?"
+                    }
+                ]
+            },
+            {
+                "theme_id": 8,
+                "theme_name": "Working with others across government",
+                "questions": [
+                    {
+                        "question_id": 15,
+                        "question_text": "Do we collaborate with service designers in other departments to share and learn?"
+                    },
+                    {
+                        "question_id": 16,
+                        "question_text": "Are we contributing to government-wide standards and aligning with best practices?"
+                    }
+                ]
+            },
+            {
+                "theme_id": 9,
+                "theme_name": "Building skills and capability",
+                "questions": [
+                    {
+                        "question_id": 17,
+                        "question_text": "Are we developing, supporting, and retaining service designers at all levels?"
+                    },
+                    {
+                        "question_id": 18,
+                        "question_text": "Do we have a strong pipeline of new service designers, including junior roles and apprentices?"
+                    }
+                ]
+            },
+            {
+                "theme_id": 10,
+                "theme_name": "Measuring success",
+                "questions": [
+                    {
+                        "question_id": 19,
+                        "question_text": "Do we know if our services are working well and delivering real value?"
+                    },
+                    {
+                        "question_id": 20,
+                        "question_text": "Do we have clear, meaningful service metrics that help teams make better decisions?"
+                    }
+                ]
+            }
+        ]
+    },
+    "scoring": {
+        "rating_scale": [
+            {
+                "value": 1,
+                "label": "Not happening – We don't do this yet."
+            },
+            {
+                "value": 2,
+                "label": "Rarely – We do this sometimes, but not consistently."
+            },
+            {
+                "value": 3,
+                "label": "Making progress – We do this in some areas, but it needs to improve."
+            },
+            {
+                "value": 4,
+                "label": "Mostly there – We do this well, but there's still room for improvement."
+            },
+            {
+                "value": 5,
+                "label": "Fully embedded – This is part of how we work every day."
+            }
+        ],
+        "scoring_method": {
+            "question_score": "Each question is rated from 1-5, with higher scores indicating greater service maturity.",
+            "theme_score": "Each theme's score is the average of its questions' scores.",
+            "overall_score": "The overall maturity score is the average of all theme scores.",
+            "tracking": "Scores can be tracked over time to measure improvements."
+        }
+    }
+}

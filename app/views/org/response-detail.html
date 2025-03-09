@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Survey response details - {{ response.organization_name }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to dashboard",
+    href: "/org/dashboard"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl">Survey response details</h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Organisation</dt>
+        <dd class="govuk-summary-list__value">{{ response.organization_name }}</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Submitted</dt>
+        <dd class="govuk-summary-list__value">{{ response.submitted_at | date }}</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Overall Score</dt>
+        <dd class="govuk-summary-list__value">{{ response.overall_score | round(1) if response.overall_score else 'N/A' }}</dd>
+      </div>
+
+      {% if response.role or response.grade or response.feedback %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Role</dt>
+          <dd class="govuk-summary-list__value">{{ response.role if response.role else 'Not provided' }}</dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Grade</dt>
+          <dd class="govuk-summary-list__value">{{ response.grade if response.grade else 'Not provided' }}</dd>
+        </div>
+
+        {% if response.feedback %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Feedback</dt>
+            <dd class="govuk-summary-list__value">{{ response.feedback | nl2br | safe }}</dd>
+          </div>
+        {% endif %}
+      {% endif %}
+    </dl>
+
+
+
+    <h2 class="govuk-heading-l">Responses</h2>
+    {% set currentTheme = '' %}
+    {% for question in questions %}
+      {% if question.theme_name != currentTheme %}
+        {% if not loop.first %}</tbody></table>{% endif %}
+        <h3 class="govuk-heading-m">{{ question.theme_name }}</h3>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="width: 10%">Question</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-half">Text</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric" style="width: 15%">Response</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+        {% set currentTheme = question.theme_name %}
+      {% endif %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{ question.question_id }}</td>
+        <td class="govuk-table__cell">{{ question.question_text }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% set answer = response.answers[question.question_id] %}
+          {% if answer %}
+            {% set ratingText = '' %}
+            {% for rating in ratingScale %}
+              {% if rating.value == answer %}
+                {% set ratingText = rating.label.split(' – ')[0] %}
+              {% endif %}
+            {% endfor %}
+           {{ ratingText }}
+          {% else %}
+            Not answered
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody></table>
+
+  
+  </div>
+</div>
+{% endblock %} 

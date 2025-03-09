@@ -1,0 +1,170 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Department Dashboard - Analytics
+{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <style>
+    .score-cell {
+      width: 80px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .score-cell {
+        width: 80px;
+        height: 20px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">{{ department.organization_name }}</span>
+    <h1 class="govuk-heading-xl">Reporting</h1>
+
+    <p class="govuk-body">There have been {{ completionStats.completed }} submitted surveys.</p>
+
+    
+    <h2 class="govuk-heading-l">Average question Scores</h2>
+    
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Number</th>
+          <th class="govuk-table__header" scope="col">Theme</th>
+          <th class="govuk-table__header" scope="col">Question Text</th>
+          <th class="govuk-table__header" scope="col">Score</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        {% for question in averageScorePerQuestion %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{ question.question_id }}</td>
+            <td class="govuk-table__cell">{{ question.theme_name }}</td>
+            <td class="govuk-table__cell">{{ question.question_text }}</td>
+            <td class="govuk-table__cell">{{ getScoreCell(question.average_score) }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div id="completionChart" style="width: 100%; height: 500px;"></div>
+    <div id="scoreChart" style="width: 100%; height: 500px;"></div>
+    <div id="submittedSurveysChart" style="width: 100%; height: 500px;"></div>
+    <div id="averageScoreChart" style="width: 100%; height: 500px;"></div>
+    <div id="averageScorePerThemeChart" style="width: 100%; height: 500px;"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% macro getScoreCell(score) %}
+  {% if score <= 1 %}
+    {% set color = '#b10026' %}
+  {% elif score <= 2 %}
+    {% set color = '#e31a1c' %}
+  {% elif score <= 3 %}
+    {% set color = '#fd8d3c' %}
+  {% elif score <= 4 %}
+    {% set color = '#31a354' %}
+  {% else %}
+    {% set color = '#006d2c' %}
+  {% endif %}
+  <div class="score-cell" style="background-color: {{ color }}">{{ score }}</div>
+{% endmacro %}
+
+{% block bodyEnd %}
+  {{ super() }}
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawCharts);
+
+    function drawCharts() {
+      // Completion Chart
+      var completionData = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Completed', {{ completionStats.completed }}],
+        ['Pending', {{ completionStats.pending }}]
+      ]);
+
+      var completionOptions = {
+        title: 'Completion Status'
+      };
+
+      var completionChart = new google.visualization.PieChart(document.getElementById('completionChart'));
+      completionChart.draw(completionData, completionOptions);
+
+      // Score Chart
+      var scoreData = google.visualization.arrayToDataTable([
+        ['Score', 'Number of Responses'],
+        ['0-20%', {{ scoreStats.range_0_20 }}],
+        ['21-40%', {{ scoreStats.range_21_40 }}],
+        ['41-60%', {{ scoreStats.range_41_60 }}],
+        ['61-80%', {{ scoreStats.range_61_80 }}],
+        ['81-100%', {{ scoreStats.range_81_100 }}]
+      ]);
+
+      var scoreOptions = {
+        title: 'Score Distribution'
+      };
+
+      var scoreChart = new google.visualization.ColumnChart(document.getElementById('scoreChart'));
+      scoreChart.draw(scoreData, scoreOptions);
+
+      // Submitted Surveys Chart
+      var submittedSurveysData = google.visualization.arrayToDataTable([
+        ['Status', 'Count'],
+        ['Submitted', {{ completionStats.completed }}],
+        ['Pending', {{ completionStats.pending }}]
+      ]);
+
+      var submittedSurveysOptions = {
+        title: 'Submitted Surveys'
+      };
+
+      var submittedSurveysChart = new google.visualization.PieChart(document.getElementById('submittedSurveysChart'));
+      submittedSurveysChart.draw(submittedSurveysData, submittedSurveysOptions);
+
+      // Average Score Chart
+      var averageScoreData = google.visualization.arrayToDataTable([
+        ['Metric', 'Score'],
+        ['Average Score', {{ averageScore }}]
+      ]);
+
+      var averageScoreOptions = {
+        title: 'Average Score'
+      };
+
+      var averageScoreChart = new google.visualization.ColumnChart(document.getElementById('averageScoreChart'));
+      averageScoreChart.draw(averageScoreData, averageScoreOptions);
+
+      // Average Score Per Theme Chart
+      var averageScorePerThemeData = google.visualization.arrayToDataTable([
+        ['Theme', 'Average Score'],
+        {% for theme in averageScorePerTheme %}
+          ['{{ theme.theme }}', {{ theme.average_score }}],
+        {% endfor %}
+      ]);
+
+      var averageScorePerThemeOptions = {
+        title: 'Average Score Per Theme'
+      };
+
+      var averageScorePerThemeChart = new google.visualization.BarChart(document.getElementById('averageScorePerThemeChart'));
+      averageScorePerThemeChart.draw(averageScorePerThemeData, averageScorePerThemeOptions);
+    }
+  </script>
+{% endblock %} 

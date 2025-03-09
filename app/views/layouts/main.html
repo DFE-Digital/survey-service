@@ -3,4 +3,82 @@ For guidance on how to use layouts see:
 https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
-{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set serviceName = "" %}
+
+{% block head %}
+  {{ super() }}
+  {% if data.cookies_policy.analytics %}
+    {% include "includes/google-analytics.html" %}
+  {% endif %}
+  <link href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css" rel="stylesheet" />
+{% endblock %}
+
+{% block bodyStart %}
+  <div data-module="cookie-banner">
+    {% include "includes/cookie-banner.html" %}
+  </div>
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/",
+    containerClasses: "govuk-width-container",
+    classes: "govuk-header--full-width-border"
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceName: "Measure design maturity",
+    serviceUrl: "/",
+    navigation: data.organization and [{
+      href: "/sign-out",
+      text: "Sign out"
+    }] or []
+  }) }}
+{% endblock %}
+
+{% block serviceNavigation %}
+  {% if user %}
+    <nav class="app-navigation govuk-clearfix">
+      <ul class="app-navigation__list">
+        <li class="app-navigation__list-item">
+          <a class="app-navigation__link" href="/org/dashboard" {{ 'aria-current="page"' if currentPage === 'dashboard' }}>Dashboard</a>
+        </li>
+        <li class="app-navigation__list-item">
+          <a class="app-navigation__link" href="/org/analysis" {{ 'aria-current="page"' if currentPage === 'analysis' }}>Analysis</a>
+        </li>
+        <li class="app-navigation__list-item">
+          <a class="app-navigation__link" href="/org/users" {{ 'aria-current="page"' if currentPage === 'users' }}>Organisation users</a>
+        </li>
+      </ul>
+    </nav>
+  {% endif %}
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "/privacy",
+          text: "Privacy"
+        },
+        {
+          href: "/accessibility",
+          text: "Accessibility"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
+
+{% block bodyEnd %}
+  {{ super() }}
+  <script src="/public/javascripts/cookies.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+{% endblock %}

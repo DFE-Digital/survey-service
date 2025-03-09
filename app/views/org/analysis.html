@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Analysis - Design maturity survey
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Analysis</h1>
+
+    {% if responses and responses.length > 0 %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <div class="app-card">
+            <h2 class="govuk-heading-m">Average score</h2>
+            <p class="govuk-body govuk-!-font-size-48 govuk-!-margin-bottom-0">{{ averageScore | round(1) }}</p>
+          </div>
+        </div>
+        
+        <div class="govuk-grid-column-one-third">
+          <div class="app-card">
+            <h2 class="govuk-heading-m">Total responses</h2>
+            <p class="govuk-body govuk-!-font-size-48 govuk-!-margin-bottom-0">{{ responses.length }}</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-6">Score breakdown</h2>
+      
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Question</th>
+            <th scope="col" class="govuk-table__header">Average score</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for question in questionScores %}
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{ question.text }}</td>
+              <td class="govuk-table__cell">{{ question.average | round(1) }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="govuk-body">No survey responses yet.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %} 
