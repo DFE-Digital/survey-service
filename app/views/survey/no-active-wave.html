@@ -1,0 +1,23 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  No active surveys - Service Maturity Assessment
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">No active surveys</h1>
+
+    <p class="govuk-body">{{ department_name if department_name else "This department" }} is not currently running a survey period.</p>
+    
+    <p class="govuk-body">Survey periods are set by department administrators. Please try again later or contact your department administrator.</p>
+
+    <p class="govuk-body">
+      <a href="/" class="govuk-button">
+        Return to home
+      </a>
+    </p>
+  </div>
+</div>
+{% endblock %} 

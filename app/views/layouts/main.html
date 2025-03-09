@@ -28,32 +28,37 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     classes: "govuk-header--full-width-border"
   }) }}
 
+
+{% if isOrgOwner %}
+
   {{ govukServiceNavigation({
     serviceName: "Measure design maturity",
     serviceUrl: "/",
-    navigation: data.organization and [{
-      href: "/sign-out",
-      text: "Sign out"
-    }] or []
+    navigation: [
+    {
+      href: "/org/dashboard",
+      text: "Dashboard",
+      active: nav === "dashboard"
+    },
+    {
+      href: "/org/waves",
+      text: "Survey periods",
+      active: nav === "waves"
+    }
+  ]
   }) }}
-{% endblock %}
 
-{% block serviceNavigation %}
-  {% if user %}
-    <nav class="app-navigation govuk-clearfix">
-      <ul class="app-navigation__list">
-        <li class="app-navigation__list-item">
-          <a class="app-navigation__link" href="/org/dashboard" {{ 'aria-current="page"' if currentPage === 'dashboard' }}>Dashboard</a>
-        </li>
-        <li class="app-navigation__list-item">
-          <a class="app-navigation__link" href="/org/analysis" {{ 'aria-current="page"' if currentPage === 'analysis' }}>Analysis</a>
-        </li>
-        <li class="app-navigation__list-item">
-          <a class="app-navigation__link" href="/org/users" {{ 'aria-current="page"' if currentPage === 'users' }}>Organisation users</a>
-        </li>
-      </ul>
-    </nav>
+  {% else %}
+
+  {{ govukServiceNavigation({
+    serviceName: "Measure design maturity",
+    serviceUrl: "/",
+    navigation: []
+  }) }}
+
   {% endif %}
+
+
 {% endblock %}
 
 {% block footer %}

@@ -57,7 +57,7 @@ router.use('/org', orgRoutes);
 router.use('/auth', authRoutes);
 
 // Route to handle sign-in form submission
-router.post('/sign-in', function (req, res) {
+router.post('/sign-in', async function (req, res) {
   const departmentCode = req.body['department-code']?.trim();
 
   if (!departmentCode) {
@@ -72,30 +72,56 @@ router.post('/sign-in', function (req, res) {
     org.analytics_identifier.toUpperCase() === departmentCode.toUpperCase()
   );
 
-  if (!organization) {
+  try {
+    // Check if there's an active wave for the department
+    const activeWave = await db('survey_waves')
+      .where({
+        department_code: departmentCode.toUpperCase(),
+        status: 'active'
+      })
+      .first();
+
+    if (!activeWave) {
+      return res.render('index', {
+        errorMessage: 'This department is not currently accepting survey responses. Please try again later.',
+        values: {
+          'department-code': departmentCode
+        }
+      });
+    }
+
+    if (!organization) {
+      return res.render('index', {
+        errorMessage: 'Enter a valid department code',
+        values: {
+          'department-code': departmentCode
+        }
+      });
+    }
+
+    // Save the cookie policy before modifying the session
+    const cookiesPolicy = req.session.data && req.session.data.cookies_policy;
+    const showConfirmation = req.session.data && req.session.data.show_confirmation;
+
+    // Initialize session data with cookies preserved
+    req.session.data = {
+      organization,
+      answers: {},
+      survey_start_time: new Date().toISOString(),
+      cookies_policy: cookiesPolicy,
+      show_confirmation: showConfirmation
+    };
+
+    res.redirect('/survey-start');
+  } catch (error) {
+    console.error('Error checking for active wave:', error);
     res.render('index', {
-      errorMessage: 'Enter a valid department code',
+      errorMessage: 'Error checking department status. Please try again.',
       values: {
         'department-code': departmentCode
       }
     });
-    return;
   }
-
-  // Save the cookie policy before modifying the session
-  const cookiesPolicy = req.session.data && req.session.data.cookies_policy;
-  const showConfirmation = req.session.data && req.session.data.show_confirmation;
-
-  // Initialize session data with cookies preserved
-  req.session.data = {
-    organization,
-    answers: {},
-    survey_start_time: new Date().toISOString(),
-    cookies_policy: cookiesPolicy,
-    show_confirmation: showConfirmation
-  };
-
-  res.redirect('/survey-start');
 });
 
 // Add the survey start page route

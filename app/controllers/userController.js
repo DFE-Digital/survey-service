@@ -1,4 +1,5 @@
 const db = require('../db');
+const { sendUserInvite } = require('../lib/notifications');
 
 async function getPendingRegistrations() {
   return db('registration_requests')
@@ -142,20 +143,55 @@ async function getUsers(req, res) {
 
 async function approveUser(req, res) {
   try {
-    const [user] = await db('users')
+    // First check if there's an active wave for the department
+    const activeWave = await db('survey_waves')
+      .where({
+        department_code: req.user.departmentCode,
+        status: 'active'
+      })
+      .first();
+
+    if (!activeWave) {
+      req.flash('error', 'Cannot approve users when there is no active survey wave. Please create a wave first.');
+      return res.redirect('/org/users');
+    }
+
+    const [request] = await db('registration_requests')
       .where({
         id: req.params.id,
-        department_code: req.user.departmentCode
+        department_code: req.user.departmentCode,
+        status: 'pending'
       })
       .update({
-        is_approved: true,
+        status: 'approved',
+        approved_by: req.user.id,
+        approved_at: db.fn.now(),
         updated_at: db.fn.now()
       })
       .returning('*');
 
-    if (user) {
-      req.flash('success', 'User approved successfully');
+    if (!request) {
+      return res.render('error', {
+        message: 'Registration request not found'
+      });
     }
+
+    // Create user account
+    const [user] = await db('users')
+      .insert({
+        email: request.email,
+        first_name: request.first_name,
+        last_name: request.last_name,
+        department_code: request.department_code,
+        department_name: request.department_name,
+        is_approved: true,
+        created_at: db.fn.now(),
+        updated_at: db.fn.now()
+      })
+      .returning('*');
+
+    // Send welcome email
+    await sendUserInvite(user.email);
 
     res.redirect('/org/users');
   } catch (error) {

@@ -5,6 +5,7 @@ const db = require('../db');
 const { sendSurveyInvite, sendUserInvite } = require('../lib/notifications');
 const userController = require('../controllers/userController');
 const surveyService = require('../services/surveyService');
+const waveService = require('../services/waveService');
 const Question = require('../models/question');
 
 const departments = require('../data/organizations.json');
@@ -17,22 +18,35 @@ router.use(requireOrgOwner);
 // Dashboard routes
 router.get('/dashboard', async (req, res) => {
   try {
-    // Get total completed surveys
-    const allResponses = await surveyService.getSurveyResponses(req.user.departmentCode);
-    const totalCompleted = allResponses.filter(r => r.submitted_at).length;
     const department = departments.find(d => d.analytics_identifier === req.user.departmentCode);
+
+    console.log(req.user)
+    
+    // Get all waves and active wave for the department
+    const waves = await waveService.getAllWaves(req.user.departmentCode);
+    const activeWave = await waveService.getActiveWave(req.user.departmentCode);
+    
+    // Get selected wave (default to active wave)
+    const selectedWaveId = req.query.wave_id || (activeWave ? activeWave.id : null);
+    const selectedWave = selectedWaveId ? 
+      await waveService.getWaveById(selectedWaveId, req.user.departmentCode) : 
+      activeWave;
+    
+    // Get responses for selected wave
+    const allResponses = await surveyService.getSurveyResponses(
+      req.user.departmentCode,
+      selectedWaveId
+    );
+    
+    const totalCompleted = allResponses.filter(r => r.submitted_at).length;
 
     // Calculate average score from completed surveys
     const completedResponses = allResponses.filter(r => r.submitted_at && r.overall_score);
-    console.log('All responses:', allResponses.length);
-    console.log('Completed responses with scores:', completedResponses.length);
-    console.log('Sample response:', allResponses[0]);
-    
     const averageScore = completedResponses.length > 0
       ? completedResponses.reduce((sum, r) => sum + parseFloat(r.overall_score), 0) / completedResponses.length
       : null;
 
-    // Get latest 5 submissions
+    // Get latest 5 submissions for selected wave
     const latestSubmissions = allResponses
       .filter(r => r.submitted_at)
       .slice(0, 5)
@@ -44,19 +58,121 @@ router.get('/dashboard', async (req, res) => {
         overall_score: r.overall_score
       }));
 
+    // Get comparison with previous wave if available
+    let comparison = null;
+    if (selectedWave && waves.length > 1) {
+      const previousWave = waves.find(w => 
+        new Date(w.end_date) < new Date(selectedWave.start_date)
+      );
+      
+      if (previousWave) {
+        comparison = await waveService.compareWaves(
+          previousWave.id,
+          selectedWave.id,
+          req.user.departmentCode
+        );
+      }
+    }
+
     res.render('org/dashboard', {
       currentPage: 'dashboard',
       totalCompleted,
       averageScore,
       latestSubmissions,
       department: department.title,
-      errors: {}
+      waves,
+      selectedWave,
+      activeWave,
+      comparison,
+      isOrgOwner: req.user.isOrgOwner
     });
   } catch (error) {
     console.error('Error fetching dashboard data:', error);
     res.render('error', {
       message: 'Error loading dashboard'
     });
+  }
+});
+
+// Wave management routes
+router.get('/waves', async (req, res) => {
+  try {
+    const waves = await waveService.getAllWaves(req.user.departmentCode);
+    const activeWave = await waveService.getActiveWave(req.user.departmentCode);
+
+    res.render('waves/index', {
+      currentPage: 'waves',
+      waves,
+      activeWave,
+      errors: {},
+      isOrgOwner: req.user.isOrgOwner
+    });
+  } catch (error) {
+    console.error('Error fetching waves:', error);
+    res.render('error', {
+      message: 'Error loading waves'
+    });
+  }
+});
+
+router.get('/waves/new', (req, res) => {
+  res.render('waves/new', {
+    currentPage: 'waves',
+    errors: {},
+    isOrgOwner: req.user.isOrgOwner
+  });
+});
+
+router.post('/waves', async (req, res) => {
+  const { name, start_date, end_date } = req.body;
+  const errors = {};
+
+  if (!name) {
+    errors.name = 'Enter a name for the wave';
+  }
+  if (!start_date) {
+    errors.start_date = 'Enter a start date';
+  }
+  if (!end_date) {
+    errors.end_date = 'Enter an end date';
+  }
+  if (start_date && end_date && new Date(start_date) >= new Date(end_date)) {
+    errors.end_date = 'End date must be after start date';
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return res.render('waves/new', {
+      currentPage: 'waves',
+      errors,
+      values: req.body
+    });
+  }
+
+  try {
+    await waveService.createWave(req.user.departmentCode, name, start_date, end_date);
+    res.redirect('/org/waves');
+  } catch (error) {
+    console.error('Error creating wave:', error);
+    if (error.message === 'Department already has an active wave') {
+      errors.general = 'Your department already has an active wave. Please close it before creating a new one.';
+    } else {
+      errors.general = 'Error creating wave. Please try again.';
+    }
+    res.render('waves/new', {
+      currentPage: 'waves',
+      errors,
+      values: req.body
+    });
+  }
+});
+
+router.post('/waves/:id/close', async (req, res) => {
+  try {
+    await waveService.closeWave(req.params.id, req.user.departmentCode);
+    res.redirect('/org/waves');
+  } catch (error) {
+    console.error('Error closing wave:', error);
+    res.redirect('/org/waves');
   }
 });
 
@@ -82,7 +198,8 @@ router.get('/responses/:id', async (req, res) => {
         department
       },
       questions,
-      ratingScale
+      ratingScale,
+      isOrgOwner: req.user.isOrgOwner
     });
   } catch (error) {
     console.error('Error fetching survey response:', error);

@@ -1,0 +1,26 @@
+{% extends "layouts/main.html" %}
+
+
+{% block navigation %}
+  {% if user.is_org_owner %}
+    <nav class="app-navigation govuk-clearfix">
+      <ul class="app-navigation__list">
+        <li class="app-navigation__item">
+          <a class="app-navigation__link {{ 'app-navigation__link--current' if currentPage === 'dashboard' }}" href="/org/dashboard">
+            Dashboard
+          </a>
+        </li>
+        <li class="app-navigation__item">
+          <a class="app-navigation__link {{ 'app-navigation__link--current' if currentPage === 'waves' }}" href="/org/waves">
+            Waves
+          </a>
+        </li>
+        <li class="app-navigation__item">
+          <a class="app-navigation__link {{ 'app-navigation__link--current' if currentPage === 'analysis' }}" href="/org/analysis">
+            Analysis
+          </a>
+        </li>
+      </ul>
+    </nav>
+  {% endif %}
+{% endblock %} 

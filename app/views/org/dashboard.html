@@ -1,51 +1,94 @@
 {% extends "layouts/main.html" %}
 
+{% set nav = "dashboard" %}
+
 {% block pageTitle %}
 Dashboard - Design maturity survey
 {% endblock %}
 
 {% block content %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">{{ department }}</span>
+    <span class="govuk-caption-l">{{department}}</span>
     <h1 class="govuk-heading-xl">Dashboard</h1>
 
+
+    <!-- Wave Selection -->
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="wave-select">
+        Select Survey Wave
+      </label>
+      <select class="govuk-select" id="wave-select" name="wave_id" onchange="this.form.submit()">
+        {% for wave in waves %}
+        <option value="{{ wave.id }}" {% if selectedWave and wave.id === selectedWave.id %}selected{% endif %}>
+          {{ wave.name }}{% if wave.id === activeWave.id %} (Active){% endif %}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    {% if selectedWave %}
     <div class="govuk-grid-row">
+      <!-- Current Wave Stats -->
       <div class="govuk-grid-column-one-third">
         <div class="app-card">
-          <h2 class="govuk-heading-m">Completed surveys</h2>
-          <p class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold govuk-!-margin-bottom-0">{{ totalCompleted
-            if totalCompleted else 0 }}</p>
+          <h3 class="govuk-heading-m">Responses</h3>
+          <p class="govuk-body govuk-!-font-size-48">{{ totalCompleted }}</p>
         </div>
       </div>
+
       <div class="govuk-grid-column-one-third">
         <div class="app-card">
-          <h2 class="govuk-heading-m">Average score</h2>
-          <p class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold govuk-!-margin-bottom-0">
-            {{ averageScore | round(1) if averageScore else 'N/A' }}
+          <h3 class="govuk-heading-m">Average Score</h3>
+          <p class="govuk-body govuk-!-font-size-48">
+            {% if averageScore %}
+              {{ averageScore | toFixed(1) }}
+            {% else %}
+              N/A
+            {% endif %}
           </p>
         </div>
       </div>
+
+      {% if comparison %}
+      <div class="govuk-grid-column-one-third">
+        <div class="app-card">
+          <h3 class="govuk-heading-m">Change from Previous</h3>
+          <p class="govuk-body govuk-!-font-size-48 
+            {% if comparison.scoreDifference > 0 %}app-text-success
+            {% elif comparison.scoreDifference < 0 %}app-text-warning{% endif %}">
+            {% if comparison.scoreDifference > 0 %}+{% endif %}
+            {{ comparison.scoreDifference | toFixed(1) }}
+          </p>
+          <p class="govuk-body">score change</p>
+        </div>
+      </div>
+      {% endif %}
     </div>
 
-    <h2 class="govuk-heading-l govuk-!-margin-top-6">Latest submissions</h2>
 
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+    <!-- Latest Submissions -->
+    <h2 class="govuk-heading-l govuk-!-margin-top-5">Latest Submissions</h2>
     {% if latestSubmissions and latestSubmissions.length > 0 %}
-
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Date</th>
-          <th scope="col" class="govuk-table__header">Overall Score</th>
-          <th scope="col" class="govuk-table__header">Actions</th>
+          <th class="govuk-table__header">Organization</th>
+          <th class="govuk-table__header">Submitted</th>
+          <th class="govuk-table__header">Score</th>
+          <th class="govuk-table__header">Actions</th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
         {% for submission in latestSubmissions %}
         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ submission.organization_name }}</td>
           <td class="govuk-table__cell">{{ submission.created_at | date }}</td>
-          <td class="govuk-table__cell">{{ submission.overall_score | round(1) if submission.overall_score else 'N/A' }}
-          </td>
+          <td class="govuk-table__cell">{{ submission.overall_score }}</td>
           <td class="govuk-table__cell">
             <a href="/org/responses/{{ submission.id }}" class="govuk-link">View details</a>
           </td>
@@ -56,33 +99,28 @@ Dashboard - Design maturity survey
     {% else %}
     <p class="govuk-body">No submissions yet.</p>
     {% endif %}
+    {% endif %}
 
-    <div class="govuk-grid-row govuk-!-margin-top-6">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l">Send survey</h2>
-
-        <form action="/org/surveys/send" method="post" novalidate>
-          {{ govukTextarea({
-          name: "emails",
-          id: "emails",
-          label: {
-          text: "Email addresses",
-          classes: "govuk-label--m"
-          },
-          hint: {
-          text: "Enter email addresses, one per line"
-          },
-          errorMessage: errors.emails and {
-          text: errors.emails
-          }
-          }) }}
-
-          {{ govukButton({
-          text: "Send survey"
-          }) }}
-        </form>
+    <!-- Send Survey Form -->
+    <h2 class="govuk-heading-l">Send Survey</h2>
+    <form method="post" action="/org/surveys/send">
+      <div class="govuk-form-group {% if errors.emails %}govuk-form-group--error{% endif %}">
+        <label class="govuk-label" for="emails">
+          Email addresses
+        </label>
+        <div id="emails-hint" class="govuk-hint">
+          Enter email addresses (one per line)
+        </div>
+        {% if errors.emails %}
+        <p id="emails-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> {{ errors.emails }}
+        </p>
+        {% endif %}
+        <textarea class="govuk-textarea {% if errors.emails %}govuk-textarea--error{% endif %}"
+          id="emails" name="emails" rows="5" aria-describedby="emails-hint"></textarea>
       </div>
-    </div>
+      <button type="submit" class="govuk-button">Send Survey</button>
+    </form>
   </div>
 </div>
 

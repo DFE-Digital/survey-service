@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% set nav = "waves" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Survey period</h1>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body">Survey periods help you organise and compare survey responses over a set timeframe. People can only submit survey responses during an active period.</p>
+  
+       
+    
+
+      
+      {% set hasActiveWave = false %}
+      {% if waves and waves.length > 0 %}
+        {% for wave in waves %}
+          {% if wave.status === 'active' %}
+            {% set hasActiveWave = true %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% if not hasActiveWave %}
+      <p class="govuk-body">You have no active periods.</p>
+
+        <p class="govuk-body"><a href="/org/waves/new" class="govuk-link">
+          Create new period
+        </a></p>
+
+        {% else %}
+
+        <p class="govuk-body">You can only have one active period at a time.</p>
+    
+      {% endif %}
+
+  </div>
+   
+    </div>
+
+    {% if waves and waves.length > 0 %}
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Name</th>
+          <th class="govuk-table__header">Start Date</th>
+          <th class="govuk-table__header">End Date</th>
+          <th class="govuk-table__header">Status</th>
+          <th class="govuk-table__header">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        {% for wave in waves %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            {{ wave.name }}
+          </td>
+          <td class="govuk-table__cell">{{ wave.start_date | date }}</td>
+          <td class="govuk-table__cell">{{ wave.end_date | date }}</td>
+          <td class="govuk-table__cell">
+            <strong
+              class="govuk-tag {% if wave.status === 'active' %}govuk-tag--green{% else %}govuk-tag--grey{% endif %}">
+              {{ wave.status | capitalize }}
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+            {% if wave.status === 'active' %}
+            <form action="/org/waves/{{ wave.id }}/close" method="post" class="govuk-!-display-inline">
+              <button type="submit" class="govuk-button govuk-button--warning govuk-!-margin-bottom-0">
+                Close period
+              </button>
+            </form>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+   
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

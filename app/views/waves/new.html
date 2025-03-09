@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% set nav = "waves" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Create New Survey Wave</h1>
+
+    <form method="post" action="/org/waves" novalidate>
+      {% if errors.general %}
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>{{ errors.general }}</li>
+          </ul>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="govuk-form-group {% if errors.name %}govuk-form-group--error{% endif %}">
+        <label class="govuk-label" for="name">
+          Wave name
+        </label>
+        <div id="name-hint" class="govuk-hint">
+          For example, "March 2024 Assessment" or "Q1 2024 Survey"
+        </div>
+        {% if errors.name %}
+        <p id="name-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> {{ errors.name }}
+        </p>
+        {% endif %}
+        <input class="govuk-input {% if errors.name %}govuk-input--error{% endif %}" 
+          id="name" 
+          name="name" 
+          type="text"
+          value="{{ values.name if values.name }}"
+          aria-describedby="name-hint">
+      </div>
+
+      <div class="govuk-form-group {% if errors.start_date %}govuk-form-group--error{% endif %}">
+        <label class="govuk-label" for="start_date">
+          Start date
+        </label>
+        {% if errors.start_date %}
+        <p id="start_date-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> {{ errors.start_date }}
+        </p>
+        {% endif %}
+        <input class="govuk-input {% if errors.start_date %}govuk-input--error{% endif %}" 
+          id="start_date" 
+          name="start_date" 
+          type="date"
+          value="{{ values.start_date if values.start_date }}">
+      </div>
+
+      <div class="govuk-form-group {% if errors.end_date %}govuk-form-group--error{% endif %}">
+        <label class="govuk-label" for="end_date">
+          End date
+        </label>
+        {% if errors.end_date %}
+        <p id="end_date-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> {{ errors.end_date }}
+        </p>
+        {% endif %}
+        <input class="govuk-input {% if errors.end_date %}govuk-input--error{% endif %}" 
+          id="end_date" 
+          name="end_date" 
+          type="date"
+          value="{{ values.end_date if values.end_date }}">
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Create wave
+      </button>
+
+      <a href="/org/waves" class="govuk-link govuk-!-margin-left-3">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %} 

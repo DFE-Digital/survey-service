@@ -89,3 +89,17 @@ addFilter('formatHistoryRow', function(reg) {
   ];
 });
 
+addFilter('formatDate', (str) => {
+  if (!str) return '';
+  const date = new Date(str);
+  return date.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
+});
+
+addFilter('toFixed', (num, decimals = 1) => {
+  if (num === null || num === undefined) return 'N/A';
+  return Number(num).toFixed(decimals);
+});
