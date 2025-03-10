@@ -8,6 +8,8 @@ const {
   rejectRegistration
 } = require('../models/user');
 const adminController = require('../controllers/adminController');
+const db = require('../db');
+const notify = require('../services/notify');
 
 // Admin sign-in page (no auth required)
 router.get('/sign-in', (req, res) => {

@@ -1,5 +1,6 @@
 const db = require('../db');
 const crypto = require('crypto');
+const notify = require('../notify');
 
 async function getUser(id) {
   const dbInstance = await db.getDb();
@@ -79,6 +80,16 @@ async function approveRegistration(id) {
         status: 'approved',
         updated_at: trx.fn.now()
       });
+
+    // Send approval notification
+    await notify.sendEmail('org_admin_approved', {
+      email: registration.email,
+      personalisation: {
+        organisationName: registration.department_name,
+        departmentCode: registration.department_code,
+        serviceURL: process.env.BASE_URL
+      }
+    });
   });
 }
 
@@ -98,12 +109,32 @@ async function createAuthToken(userId, type = 'magic_link') {
   const expiresAt = new Date();
   expiresAt.setMinutes(expiresAt.getMinutes() + 15); // 15 minutes
 
+  // Get user details for the email
+  const user = await dbInstance('users')
+    .where({ id: userId })
+    .first();
+
+  if (!user) {
+    throw new Error('User not found');
+  }
+
   await dbInstance('auth_tokens').insert({
     token,
     user_id: userId,
     type,
     expires_at: expiresAt
   });
+
+  // Send magic link email
+  if (type === 'magic_link') {
+    await notify.sendEmail('magic_link', {
+      email: user.email,
+      personalisation: {
+        magicLink: `${process.env.BASE_URL}/auth/verify?token=${token}`,
+        departmentCode: user.department_code
+      }
+    });
+  }
 
   return { token, expiresAt };
 }

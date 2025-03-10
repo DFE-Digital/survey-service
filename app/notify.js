@@ -3,8 +3,13 @@ const NotifyClient = require('notifications-node-client').NotifyClient;
 const notify = new NotifyClient(process.env.NOTIFY_API_KEY);
 
 const TEMPLATES = {
-  magic_link: '4599d87d-3863-4d15-bee0-628d6c6fe8d6',
-  registration: '63b7dfcc-9a3a-4d2c-a373-696415c1cdb9'
+  magic_link: process.env.NOTIFY_MAGIC_LINK_TEMPLATE_ID,
+  registration: process.env.NOTIFY_REGISTRATION_TEMPLATE_ID,
+  survey_invite: process.env.NOTIFY_SURVEY_INVITE_TEMPLATE_ID,
+  survey_complete: process.env.NOTIFY_SURVEY_COMPLETE_TEMPLATE_ID,
+  wave_complete: process.env.NOTIFY_WAVE_COMPLETE_TEMPLATE_ID,
+  org_admin_approved: process.env.NOTIFY_ORG_ADMIN_APPROVED_TEMPLATE_ID,
+  org_admin_rejected: process.env.NOTIFY_ORG_ADMIN_REJECTED_TEMPLATE_ID
 };
 
 async function sendEmail(templateName, { email, personalisation }) {
@@ -24,5 +29,6 @@ async function sendEmail(templateName, { email, personalisation }) {
 }
 
 module.exports = {
-  sendEmail
+  sendEmail,
+  TEMPLATES
 }; 
