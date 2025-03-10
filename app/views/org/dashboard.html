@@ -15,21 +15,27 @@ Dashboard - Design maturity survey
 
 
     <!-- Wave Selection -->
+     <div style="background-color: #f3f2f1; padding: 25px; border-radius: 0px;" class="govuk-!-margin-bottom-7">
     <form method="get" action="/org/dashboard">
-      <div class="govuk-form-group">
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
         <label class="govuk-label" for="wave-select">
           Survey period
         </label>
-        <select class="govuk-select" id="wave-select" name="wave_id" onchange="this.form.submit()">
-          {% for wave in waves %}
-          <option value="{{ wave.id }}" {% if wave.id === selectedWave.id %}selected{% endif %}>
-            {{ wave.name }}{% if wave.id === activeWave.id %} (Active){% endif %}
-          </option>
-          {% endfor %}
-        </select>
+        <div class="app-select-container">
+          <select class="govuk-select" id="wave-select" name="wave_id">
+            {% for wave in waves %}
+            <option value="{{ wave.id }}" {% if wave.id === selectedWave.id %}selected{% endif %}>
+              {{ wave.name }}{% if wave.id === activeWave.id %} (Active){% endif %}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="govuk-button govuk-!-margin-top-0 govuk-!-margin-bottom-0">
+          Apply
+        </button>
       </div>
     </form>
-
+    </div>
     {% if selectedWave %}
     <div class="govuk-grid-row">
       <!-- Current Wave Stats -->
@@ -130,6 +136,27 @@ Dashboard - Design maturity survey
     background: #ffffff;
     padding: 20px;
     border: 1px solid #b1b4b6;
+  }
+
+  .app-select-container {
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+  }
+
+  .app-select-container select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 40px;
+    border-radius: 0;
+    background-image: url("data:image/svg+xml,%3Csvg class='govuk-select__icon' xmlns='http://www.w3.org/2000/svg' width='17' height='10' viewBox='0 0 17 10' fill='none'%3E%3Cpath d='M1 1L8.5 8.5L16 1' stroke='%230b0c0c' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+
+  .app-select-container select::-ms-expand {
+    display: none;
   }
 </style>
 {% endblock %}
