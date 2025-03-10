@@ -27,12 +27,16 @@
     {% else %}
     <h1 class="govuk-heading-xl">Register your organisation</h1>
 
-    <p class="govuk-body">Register to run design maturity surveys in your organisation. Once approved, you'll be able to:</p>
+    <p class="govuk-body">Register to run design maturity surveys in your organisation.</p>
+    
+    <p class="govuk-body">We will check if your organisation already has a survey manager. If you're approved, you'll be able to:</p>
     <ul class="govuk-list govuk-list--bullet">
       <li>Send survey invites to your team</li>
       <li>View results and analysis</li>
       <li>Track your organisation's design maturity over time</li>
     </ul>
+
+    <p class="govuk-body">If your organisation already has a survey manager, we'll check with them to see if you can be added as a survey manager.</p>
 
     <form action="/sign-up" method="post" novalidate>
       {{ govukInput({

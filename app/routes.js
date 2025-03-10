@@ -82,12 +82,7 @@ router.post('/sign-in', async function (req, res) {
       .first();
 
     if (!activeWave) {
-      return res.render('index', {
-        errorMessage: 'This department is not currently accepting survey responses. Please try again later.',
-        values: {
-          'department-code': departmentCode
-        }
-      });
+      return res.redirect('/survey/no-active-wave');
     }
 
     if (!organization) {
