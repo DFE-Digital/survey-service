@@ -1,80 +1,61 @@
 const db = require('../db');
 const { sendUserInvite } = require('../lib/notifications');
+const userModel = require('../models/user');
+const notifyService = require('../services/notifyService');
 
-async function getPendingRegistrations() {
-  return db('registration_requests')
-    .where('status', 'pending')
-    .orderBy('created_at', 'desc');
-}
-
-async function getRegistrationHistory() {
-  return db('registration_requests')
-    .whereNot('status', 'pending')
-    .orderBy('updated_at', 'desc')
-    .limit(50);
-}
-
-async function approveRegistration(id) {
-  const registration = await db('registration_requests')
-    .where('id', id)
-    .first();
-
-  if (!registration) {
-    throw new Error('Registration not found');
+async function getPendingRegistrations(req, res) {
+  try {
+    const pending = await userModel.getPendingRegistrations();
+    res.json(pending);
+  } catch (error) {
+    console.error('Error fetching pending registrations:', error);
+    res.status(500).json({ error: 'Error fetching pending registrations' });
   }
-
-  // Log full registration data
-  console.log('Full registration data:', JSON.stringify(registration, null, 2));
-
-  if (!registration.department_name) {
-    throw new Error('Registration is missing department name');
-  }
-
-  await db.transaction(async (trx) => {
-    // Build insert data
-    const insertData = {
-      email: registration.email,
-      first_name: registration.first_name,
-      last_name: registration.last_name,
-      department_code: registration.department_code,
-      department_name: registration.department_name,
-      is_approved: true,
-      is_admin: false,
-      is_org_owner: true
-    };
-
-    console.log('Insert data:', JSON.stringify(insertData, null, 2));
-
-    // Use explicit columns in the insert
-    const query = trx.queryBuilder()
-      .insert(insertData)
-      .into('users')
-      .returning('*');
-
-    // Log the query before executing
-    console.log('Query SQL:', query.toSQL().sql);
-    console.log('Query bindings:', query.toSQL().bindings);
-
-    const [user] = await query;
-    console.log('Created user:', JSON.stringify(user, null, 2));
-
-    await trx('registration_requests')
-      .where('id', id)
-      .update({
-        status: 'approved',
-        updated_at: trx.fn.now()
-      });
-  });
 }
 
-async function rejectRegistration(id, reason) {
-  await db('registration_requests')
-    .where('id', id)
-    .update({
-      status: 'rejected',
-      rejection_reason: reason,
-      updated_at: db.fn.now()
+async function getRegistrationHistory(req, res) {
+  try {
+    const history = await userModel.getRegistrationHistory();
+    res.json(history);
+  } catch (error) {
+    console.error('Error fetching registration history:', error);
+    res.status(500).json({ error: 'Error fetching registration history' });
+  }
+}
+
+async function approveRegistration(req, res) {
+  const { id } = req.params;
+
+  try {
+    const registration = await userModel.approveRegistration(id);
+
+    // Send approval notification
+    await notifyService.sendSurveyInvite(registration.email, registration.department_name, `${process.env.BASE_URL}/admin/sign-in`);
+
+    res.redirect('/admin/registrations');
+  } catch (error) {
+    console.error('Error approving registration:', error);
+    res.render('error', {
+      title: 'Something went wrong',
+      text: 'Please try again later.'
     });
+  }
+}
+
+async function rejectRegistration(req, res) {
+  const { id } = req.params;
+  const { reason } = req.body;
+
+  try {
+    await userModel.rejectRegistration(id, reason);
+    res.redirect('/admin/registrations');
+  } catch (error) {
+    console.error('Error rejecting registration:', error);
+    res.render('error', {
+      title: 'Something went wrong',
+      text: 'Please try again later.'
+    });
+  }
 }
 
 async function getAnalysis(req, res) {
@@ -266,6 +247,31 @@ async function inviteUser(req, res) {
   }
 }
 
+async function createAuthToken(req, res) {
+  const { userId, type } = req.body;
+
+  try {
+    const { token, expiresAt } = await userModel.createAuthToken(userId, type);
+
+    // Get user details for the email
+    const user = await userModel.getUser(userId);
+
+    if (!user) {
+      throw new Error('User not found');
+    }
+
+    // Send magic link email
+    if (type === 'magic_link') {
+      await notifyService.sendSurveyInvite(user.email, user.department_code, `${process.env.BASE_URL}/auth/verify?token=${token}`);
+    }
+
+    res.json({ token, expiresAt });
+  } catch (error) {
+    console.error('Error creating auth token:', error);
+    res.status(500).json({ error: 'Error creating auth token' });
+  }
+}
+
 module.exports = {
   getPendingRegistrations,
   getRegistrationHistory,
@@ -275,5 +281,6 @@ module.exports = {
   getUsers,
   approveUser,
   removeUser,
-  inviteUser
+  inviteUser,
+  createAuthToken
 }; 

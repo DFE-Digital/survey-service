@@ -64,6 +64,28 @@ class NotifyService {
       throw error;
     }
   }
+
+
+  // send magic link email
+  async sendMagicLink(email, token) {
+    try {
+      const response = await this.client.sendEmail(
+        process.env.NOTIFY_MAGIC_LINK_TEMPLATE_ID,
+        email,
+        {
+          personalisation: {
+            token: token,
+            serviceURL: process.env.BASE_URL
+          }
+        }
+      );
+
+      return response;
+    } catch (error) {
+      console.error('Error sending magic link:', error);
+      throw error;
+    }
+  }
 }
 
 module.exports = new NotifyService(); 

@@ -1,7 +1,7 @@
 {
     "survey": {
-        "title": "Service Maturity Assessment",
-        "description": "This survey measures the maturity of service design. Responses will be used to track progress and identify areas for improvement.",
+        "title": "Design maturity",
+        "description": "This survey measures the maturity of design. Responses will be used to track progress and identify areas for improvement.",
         "themes": [
             {
                 "theme_id": 1,
@@ -9,11 +9,11 @@
                 "questions": [
                     {
                         "question_id": 1,
-                        "question_text": "Do leaders support and prioritise service design in decision-making?"
+                        "question_text": "Do leaders support and prioritise design in decision-making?"
                     },
                     {
                         "question_id": 2,
-                        "question_text": "Are service design principles included when new policies or services are developed?"
+                        "question_text": "Are design principles included when new policies or services are developed?"
                     }
                 ]
             },
@@ -97,7 +97,7 @@
                     },
                     {
                         "question_id": 14,
-                        "question_text": "Is there a shared understanding of what good service design looks like across different teams?"
+                        "question_text": "Is there a shared understanding of what good design looks like across different teams?"
                     }
                 ]
             },
@@ -107,7 +107,7 @@
                 "questions": [
                     {
                         "question_id": 15,
-                        "question_text": "Do we collaborate with service designers in other departments to share and learn?"
+                        "question_text": "Do we collaborate with designers in other departments to share and learn?"
                     },
                     {
                         "question_id": 16,
@@ -121,11 +121,11 @@
                 "questions": [
                     {
                         "question_id": 17,
-                        "question_text": "Are we developing, supporting, and retaining service designers at all levels?"
+                        "question_text": "Are we developing, supporting, and retaining designers at all levels?"
                     },
                     {
                         "question_id": 18,
-                        "question_text": "Do we have a strong pipeline of new service designers, including junior roles and apprentices?"
+                        "question_text": "Do we have a strong pipeline of new designers, including junior roles and apprentices?"
                     }
                 ]
             },

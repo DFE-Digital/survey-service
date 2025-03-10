@@ -15,18 +15,20 @@ Dashboard - Design maturity survey
 
 
     <!-- Wave Selection -->
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="wave-select">
-        Select Survey Wave
-      </label>
-      <select class="govuk-select" id="wave-select" name="wave_id" onchange="this.form.submit()">
-        {% for wave in waves %}
-        <option value="{{ wave.id }}" {% if selectedWave and wave.id === selectedWave.id %}selected{% endif %}>
-          {{ wave.name }}{% if wave.id === activeWave.id %} (Active){% endif %}
-        </option>
-        {% endfor %}
-      </select>
-    </div>
+    <form method="get" action="/org/dashboard">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="wave-select">
+          Survey period
+        </label>
+        <select class="govuk-select" id="wave-select" name="wave_id" onchange="this.form.submit()">
+          {% for wave in waves %}
+          <option value="{{ wave.id }}" {% if wave.id === selectedWave.id %}selected{% endif %}>
+            {{ wave.name }}{% if wave.id === activeWave.id %} (Active){% endif %}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+    </form>
 
     {% if selectedWave %}
     <div class="govuk-grid-row">
@@ -43,7 +45,7 @@ Dashboard - Design maturity survey
           <h3 class="govuk-heading-m">Average Score</h3>
           <p class="govuk-body govuk-!-font-size-48">
             {% if averageScore %}
-              {{ averageScore | toFixed(1) }}
+              {{ averageScore | toFixed(2) }}
             {% else %}
               N/A
             {% endif %}
@@ -61,7 +63,6 @@ Dashboard - Design maturity survey
             {% if comparison.scoreDifference > 0 %}+{% endif %}
             {{ comparison.scoreDifference | toFixed(1) }}
           </p>
-          <p class="govuk-body">score change</p>
         </div>
       </div>
       {% endif %}

@@ -19,18 +19,23 @@ router.use(requireOrgOwner);
 router.get('/dashboard', async (req, res) => {
   try {
     const department = departments.find(d => d.analytics_identifier === req.user.departmentCode);
-
-    console.log(req.user)
     
     // Get all waves and active wave for the department
     const waves = await waveService.getAllWaves(req.user.departmentCode);
     const activeWave = await waveService.getActiveWave(req.user.departmentCode);
     
-    // Get selected wave (default to active wave)
+    console.log('All waves:', waves);
+    console.log('Active wave:', activeWave);
+    
+    // Get selected wave (default to active wave if no wave_id provided)
     const selectedWaveId = req.query.wave_id || (activeWave ? activeWave.id : null);
+    console.log('Selected wave ID:', selectedWaveId);
+    
     const selectedWave = selectedWaveId ? 
       await waveService.getWaveById(selectedWaveId, req.user.departmentCode) : 
       activeWave;
+    
+    console.log('Selected wave:', selectedWave);
     
     // Get responses for selected wave
     const allResponses = await surveyService.getSurveyResponses(
@@ -38,13 +43,18 @@ router.get('/dashboard', async (req, res) => {
       selectedWaveId
     );
     
+    console.log('All responses:', allResponses);
+    
     const totalCompleted = allResponses.filter(r => r.submitted_at).length;
+    console.log('Total completed:', totalCompleted);
 
     // Calculate average score from completed surveys
     const completedResponses = allResponses.filter(r => r.submitted_at && r.overall_score);
     const averageScore = completedResponses.length > 0
       ? completedResponses.reduce((sum, r) => sum + parseFloat(r.overall_score), 0) / completedResponses.length
       : null;
+
+    console.log('Average score:', averageScore);
 
     // Get latest 5 submissions for selected wave
     const latestSubmissions = allResponses
@@ -58,6 +68,8 @@ router.get('/dashboard', async (req, res) => {
         overall_score: r.overall_score
       }));
 
+    console.log('Latest submissions:', latestSubmissions);
+
     // Get comparison with previous wave if available
     let comparison = null;
     if (selectedWave && waves.length > 1) {
@@ -65,12 +77,15 @@ router.get('/dashboard', async (req, res) => {
         new Date(w.end_date) < new Date(selectedWave.start_date)
       );
       
+      console.log('Previous wave:', previousWave);
+      
       if (previousWave) {
         comparison = await waveService.compareWaves(
           previousWave.id,
           selectedWave.id,
           req.user.departmentCode
         );
+        console.log('Wave comparison:', comparison);
       }
     }
 

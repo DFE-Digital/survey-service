@@ -1,5 +1,6 @@
 const db = require('../db');
 const crypto = require('crypto');
+const notifyService = require('../services/notifyService');
 
 async function signIn(req, res) {
   const errors = {};
@@ -82,6 +83,9 @@ async function signIn(req, res) {
       created_at: db.fn.now(),
       updated_at: db.fn.now()
     });
+
+    // Send magic link email
+    await notifyService.sendMagicLink(user.email, token);
 
     if (process.env.NODE_ENV !== 'production') {
       console.log(`Magic link: ${process.env.BASE_URL || 'http://localhost:3000'}/auth/t/${token}`);
