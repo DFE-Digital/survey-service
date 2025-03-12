@@ -131,7 +131,7 @@ router.get('/survey-start', function (req, res) {
     themes: Question.getThemes()
   };
 
-  res.render('survey-start', {
+  res.render('survey/start', {
     organization: req.session.data.organization,
     surveyData
   });
@@ -163,7 +163,7 @@ router.get('/survey/question-:questionId', function (req, res) {
     backLink = previousQuestionId > 0 ? `/survey/question-${previousQuestionId}` : '/survey-start';
   }
 
-  res.render('question', {
+  res.render('survey/question', {
     question,
     ratingScale,
     backLink,
@@ -221,7 +221,7 @@ router.get('/survey/check-answers', function (req, res) {
   const allQuestions = Question.getAllQuestions();
   const ratingScale = Question.getRatingScale();
   
-  res.render('check-answers', {
+  res.render('survey/check-answers', {
     questions: allQuestions,
     ratingScale,
     data: req.session.data,
@@ -271,7 +271,7 @@ router.post('/survey/role-info', function (req, res) {
   }
 
   // Create a form to submit the survey
-  res.render('submit', {
+  res.render('survey/submit', {
     data: req.session.data
   });
 });
@@ -291,9 +291,8 @@ router.post('/survey/submit', async function (req, res) {
 
     console.log('validationErrors', validationErrors);
 
-
     if (validationErrors.length > 0) {
-      return res.render('check-answers', {
+      return res.render('survey/check-answers', {
         questions: Question.getAllQuestions(),
         ratingScale: Question.getRatingScale(),
         data: req.session.data,
@@ -371,22 +370,22 @@ router.post('/survey/submit', async function (req, res) {
 
 // Confirmation page
 router.get('/survey/confirmation', function (req, res) {
-  res.render('confirmation');
+  res.render('survey/confirmation');
 });
 
 // Add routes for footer pages
 router.get('/cookies', function (req, res) {
-  res.render('cookies', {
+  res.render('static/cookies', {
     cookies_policy: req.session.data && req.session.data.cookies_policy
   });
 });
 
 router.get('/privacy', function (req, res) {
-  res.render('privacy');
+  res.render('static/privacy');
 });
 
 router.get('/accessibility', function (req, res) {
-  res.render('accessibility');
+  res.render('static/accessibility');
 });
 
 // Handle cookie consent

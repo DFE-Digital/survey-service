@@ -13,7 +13,7 @@ const db = require('../db');
 
 // Sign in page
 router.get('/sign-in', (req, res) => {
-  res.render('sign-in', {
+  res.render('auth/sign-in', {
     errors: {},
     success: req.query.success === 'true'
   });
@@ -27,7 +27,7 @@ router.post('/sign-in', async (req, res) => {
     const user = await getUserByEmail(email);
     
     if (!user) {
-      return res.render('sign-in', {
+      return res.render('auth/sign-in', {
         errors: {
           email: {
             text: 'Email address not found'
@@ -37,7 +37,7 @@ router.post('/sign-in', async (req, res) => {
     }
 
     if (!user.is_approved) {
-      return res.render('sign-in', {
+      return res.render('auth/sign-in', {
         errors: {
           email: {
             text: 'Your account is pending approval'
@@ -59,7 +59,7 @@ router.post('/sign-in', async (req, res) => {
     res.redirect('/sign-in?success=true');
   } catch (error) {
     console.error('Sign in error:', error);
-    res.render('sign-in', {
+    res.render('auth/sign-in', {
       errors: {
         email: {
           text: 'Something went wrong. Please try again.'
@@ -71,7 +71,7 @@ router.post('/sign-in', async (req, res) => {
 
 // Sign up page
 router.get('/sign-up', (req, res) => {
-  res.render('sign-up', {
+  res.render('auth/sign-up', {
     departments: organizations.map(org => ({
       value: org.analytics_identifier,
       text: org.title
@@ -106,7 +106,7 @@ router.post('/sign-up', async (req, res) => {
       }
     });
 
-    res.render('sign-up', {
+    res.render('auth/sign-up', {
       departments: organizations.map(org => ({
         value: org.analytics_identifier,
         text: org.title
@@ -115,7 +115,7 @@ router.post('/sign-up', async (req, res) => {
     });
   } catch (error) {
     console.error('Registration error:', error);
-    res.render('sign-up', {
+    res.render('auth/sign-up', {
       departments: organizations.map(org => ({
         value: org.analytics_identifier,
         text: org.title
